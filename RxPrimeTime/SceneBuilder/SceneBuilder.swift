@@ -1,3 +1,11 @@
+//
+//  SceneBuilder.swift
+//  SceneBuilder
+//
+//  Created by Jean Raphael Bordet on 15/02/2020.
+//  Copyright © 2020 Bordet. All rights reserved.
+//
+
 import UIKit
 
 public struct Scene<A: UIViewController> {
@@ -7,9 +15,10 @@ public struct Scene<A: UIViewController> {
         guard let nib = (String(describing: type(of: self)) as NSString).components(separatedBy: ".").first else {
             fatalError()
         }
-                
-        let vc = A(nibName: String(nib.replacingOccurrences(of: "Scene<", with: "").dropLast()),
-                   bundle: Bundle(for: A.self))
+        
+        let nibName = nib.replacingOccurrences(of: "Scene<", with: "").dropLast()
+        
+        let vc = A(nibName: String(nibName), bundle: Bundle(for: A.self))
         
         return vc
     }
