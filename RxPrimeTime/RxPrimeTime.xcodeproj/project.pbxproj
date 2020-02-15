@@ -74,7 +74,7 @@
 		F8B1153B23F8739700DA6466 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153A23F8739700DA6466 /* AppReducer.swift */; };
 		F8B1153E23F874CC00DA6466 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153D23F874CC00DA6466 /* AppState.swift */; };
 		F8B1154023F874DA00DA6466 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153F23F874DA00DA6466 /* AppAction.swift */; };
-		F8B1154423F8840A00DA6466 /* FaketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1154323F8840A00DA6466 /* FaketTests.swift */; };
+		F8B1154623F88AA100DA6466 /* ComposableArchitectureTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */; };
 		FB2EB6BDDCBEA4D2D63AA95C /* Pods_FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */; };
 /* End PBXBuildFile section */
 
@@ -288,7 +288,6 @@
 		F8B1153A23F8739700DA6466 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		F8B1153D23F874CC00DA6466 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F8B1153F23F874DA00DA6466 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
-		F8B1154323F8840A00DA6466 /* FaketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaketTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,15 +417,15 @@
 				F8B1142123F7DF2F00DA6466 /* PrimeTime.playground */,
 				F87E5D7F23F7D3EA00FEC92D /* RxPrimeTime */,
 				F87E5D9623F7D3EC00FEC92D /* RxPrimeTimeTests */,
-				F87E5DB123F7D60B00FEC92D /* ComposableArchitecture */,
-				F87E5DBE23F7D60B00FEC92D /* ComposableArchitectureTests */,
 				F8B113DF23F7D91700DA6466 /* Counter */,
 				F8B113EC23F7D91800DA6466 /* CounterTests */,
+				F8B1151323F86D3500DA6466 /* FavoritePrimes */,
+				F8B1152023F86D3500DA6466 /* FavoritePrimesTests */,
+				F87E5DB123F7D60B00FEC92D /* ComposableArchitecture */,
+				F87E5DBE23F7D60B00FEC92D /* ComposableArchitectureTests */,
 				F8B114AE23F7ED3F00DA6466 /* Networking */,
 				F8B114BB23F7ED3F00DA6466 /* NetworkingTests */,
 				F8B114D023F7EDC800DA6466 /* SceneBuilder */,
-				F8B1151323F86D3500DA6466 /* FavoritePrimes */,
-				F8B1152023F86D3500DA6466 /* FavoritePrimesTests */,
 				F87E5D7E23F7D3EA00FEC92D /* Products */,
 				F87E5DA823F7D4F000FEC92D /* Frameworks */,
 				D7611B93963D08CB012EA578 /* Pods */,
@@ -471,7 +470,6 @@
 				F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */,
 				F87E5D9723F7D3EC00FEC92D /* RxPrimeTimeTests.swift */,
 				F87E5D9923F7D3EC00FEC92D /* Info.plist */,
-				F8B1154323F8840A00DA6466 /* FaketTests.swift */,
 			);
 			path = RxPrimeTimeTests;
 			sourceTree = "<group>";
@@ -1354,7 +1352,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87E5D9823F7D3EC00FEC92D /* RxPrimeTimeTests.swift in Sources */,
-				F8B1154423F8840A00DA6466 /* FaketTests.swift in Sources */,
 				F8B1142323F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1446,6 +1443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B1152223F86D3500DA6466 /* FavoritePrimesTests.swift in Sources */,
+				F8B1154623F88AA100DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
