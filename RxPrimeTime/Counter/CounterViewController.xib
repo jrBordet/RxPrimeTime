@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CounterViewController" customModule="PrimeTime" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="8Dn-Lb-kQF" id="qvC-hS-Xti"/>
+                <outlet property="decrButton" destination="w4x-Jc-oUP" id="Uof-hM-gYi"/>
+                <outlet property="incrButton" destination="xYQ-pX-btw" id="SoK-pU-pja"/>
+                <outlet property="isNthPrimeButton" destination="oHQ-YK-dtm" id="kNO-4U-vId"/>
+                <outlet property="isPrimeModalShown" destination="Svj-fY-tEj" id="EX1-zz-ReZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BXo-1S-cWb">
+                    <rect key="frame" x="157" y="427" width="100" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-Jc-oUP">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                            <state key="normal" title="-"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dn-Lb-kQF">
+                            <rect key="frame" x="35" y="0.0" width="30" height="52"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYQ-pX-btw">
+                            <rect key="frame" x="70" y="0.0" width="30" height="52"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                            <state key="normal" title="+"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-ou-9uA">
+                    <rect key="frame" x="0.0" y="495" width="414" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svj-fY-tEj">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="Is this Prime?"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHQ-YK-dtm">
+                            <rect key="frame" x="0.0" y="40" width="414" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="What is the {$0} prime?"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Hbx-ou-9uA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9Sa-mF-W8I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hbx-ou-9uA" secondAttribute="trailing" id="fGg-Ol-Tuv"/>
+                <constraint firstItem="BXo-1S-cWb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fx3-YT-a3W"/>
+                <constraint firstItem="BXo-1S-cWb" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gbw-zD-P6u"/>
+                <constraint firstItem="Hbx-ou-9uA" firstAttribute="top" secondItem="BXo-1S-cWb" secondAttribute="bottom" constant="16" id="hbY-Oq-NDl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="103" y="151"/>
+        </view>
+    </objects>
+</document>

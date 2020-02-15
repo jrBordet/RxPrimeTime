@@ -58,6 +58,9 @@
 		F8B114FD23F854E400DA6466 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F623F854E400DA6466 /* Operators.swift */; };
 		F8B114FE23F854E400DA6466 /* Requests+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F823F854E400DA6466 /* Requests+.swift */; };
 		F8B114FF23F854E400DA6466 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F923F854E400DA6466 /* HTTPStatusCodes.swift */; };
+		F8B1150123F8555D00DA6466 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150023F8555D00DA6466 /* Counter.swift */; };
+		F8B1150323F855A400DA6466 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150223F855A400DA6466 /* CounterViewController.swift */; };
+		F8B1150523F855DC00DA6466 /* CounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1150423F855DC00DA6466 /* CounterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +243,9 @@
 		F8B114F623F854E400DA6466 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		F8B114F823F854E400DA6466 /* Requests+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Requests+.swift"; sourceTree = "<group>"; };
 		F8B114F923F854E400DA6466 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		F8B1150023F8555D00DA6466 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		F8B1150223F855A400DA6466 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		F8B1150423F855DC00DA6466 /* CounterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +453,9 @@
 		F8B113DF23F7D91700DA6466 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
+				F8B1150023F8555D00DA6466 /* Counter.swift */,
+				F8B1150223F855A400DA6466 /* CounterViewController.swift */,
+				F8B1150423F855DC00DA6466 /* CounterViewController.xib */,
 				F8B1141623F7DD1600DA6466 /* PrimeModal */,
 				F8B113E023F7D91700DA6466 /* Counter.h */,
 				F8B113E123F7D91700DA6466 /* Info.plist */,
@@ -466,9 +475,9 @@
 		F8B1141623F7DD1600DA6466 /* PrimeModal */ = {
 			isa = PBXGroup;
 			children = (
+				F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */,
 				F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */,
 				F8B1141723F7DD2200DA6466 /* PrimeModal.swift */,
-				F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */,
 			);
 			path = PrimeModal;
 			sourceTree = "<group>";
@@ -877,6 +886,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B1141C23F7DD9000DA6466 /* PrimeModalViewController.xib in Resources */,
+				F8B1150523F855DC00DA6466 /* CounterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1164,6 +1174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B1150323F855A400DA6466 /* CounterViewController.swift in Sources */,
+				F8B1150123F8555D00DA6466 /* Counter.swift in Sources */,
 				F8B1141A23F7DD6600DA6466 /* PrimeModalViewController.swift in Sources */,
 				F8B1141F23F7DE2A00DA6466 /* Rx+extensions.swift in Sources */,
 				F8B1141823F7DD2200DA6466 /* PrimeModal.swift in Sources */,
@@ -1814,7 +1826,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SceneBuilder/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1844,7 +1856,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SceneBuilder/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
