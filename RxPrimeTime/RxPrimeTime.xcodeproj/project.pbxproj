@@ -12,6 +12,7 @@
 		60D1C2C01FA1EC565C754EFB /* Pods_RxPrimeTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */; };
 		9DC15AA018F036F257BD94C9 /* Pods_Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1224FE20A287BAED3AB4B05A /* Pods_Counter.framework */; };
 		A5A00BFB6176A846A3D26CFC /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */; };
+		B7F974C73B90CC78168DE7F3 /* Pods_FavoritePrimes_FavoritePrimesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D6269044A9EE80C141F3C0 /* Pods_FavoritePrimes_FavoritePrimesTests.framework */; };
 		CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */; };
 		F87E5D8123F7D3EA00FEC92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */; };
 		F87E5D8A23F7D3EC00FEC92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */; };
@@ -63,6 +64,15 @@
 		F8B1150523F855DC00DA6466 /* CounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1150423F855DC00DA6466 /* CounterViewController.xib */; };
 		F8B1150723F8594E00DA6466 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150623F8594E00DA6466 /* CounterView.swift */; };
 		F8B1150923F859EA00DA6466 /* Counter+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150823F859EA00DA6466 /* Counter+Environment.swift */; };
+		F8B1151B23F86D3500DA6466 /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */; };
+		F8B1152223F86D3500DA6466 /* FavoritePrimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1152123F86D3500DA6466 /* FavoritePrimesTests.swift */; };
+		F8B1152423F86D3500DA6466 /* FavoritePrimes.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B1151423F86D3500DA6466 /* FavoritePrimes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8B1152723F86D3500DA6466 /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */; };
+		F8B1152823F86D3500DA6466 /* FavoritePrimes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8B1153023F86D6700DA6466 /* FavoritePrimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */; };
+		F8B1153223F86E3C00DA6466 /* Favorite+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */; };
+		F8B1153423F86F1C00DA6466 /* FileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153323F86F1C00DA6466 /* FileClient.swift */; };
+		FB2EB6BDDCBEA4D2D63AA95C /* Pods_FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +167,27 @@
 			remoteGlobalIDString = F8B114CE23F7EDC800DA6466;
 			remoteInfo = SceneBuilder;
 		};
+		F8B1151C23F86D3500DA6466 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B1151123F86D3500DA6466;
+			remoteInfo = FavoritePrimes;
+		};
+		F8B1151E23F86D3500DA6466 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87E5D7C23F7D3EA00FEC92D;
+			remoteInfo = RxPrimeTime;
+		};
+		F8B1152523F86D3500DA6466 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B1151123F86D3500DA6466;
+			remoteInfo = FavoritePrimes;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,6 +198,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F8B114C323F7ED3F00DA6466 /* Networking.framework in Embed Frameworks */,
+				F8B1152823F86D3500DA6466 /* FavoritePrimes.framework in Embed Frameworks */,
 				F87E5DC623F7D60B00FEC92D /* ComposableArchitecture.framework in Embed Frameworks */,
 				F8B113F423F7D91800DA6466 /* Counter.framework in Embed Frameworks */,
 				F8B114E523F7EDC800DA6466 /* SceneBuilder.framework in Embed Frameworks */,
@@ -178,13 +210,18 @@
 
 /* Begin PBXFileReference section */
 		0325EC23D84268FF2419C2CF /* Pods-RxPrimeTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTime.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime.release.xcconfig"; sourceTree = "<group>"; };
+		09D6269044A9EE80C141F3C0 /* Pods_FavoritePrimes_FavoritePrimesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoritePrimes_FavoritePrimesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CD25A9689E7B506F8A6EC5F /* Pods-FavoritePrimes-FavoritePrimesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes-FavoritePrimesTests.release.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests.release.xcconfig"; sourceTree = "<group>"; };
 		0ED9B4EB18967B2C9F09F23F /* Pods-ComposableArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture.release.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture/Pods-ComposableArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		1224FE20A287BAED3AB4B05A /* Pods_Counter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Counter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC62B55F4BC44CACC5F005E /* Pods-Counter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter.debug.xcconfig"; path = "Target Support Files/Pods-Counter/Pods-Counter.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB0212D371B08FF4E83FD3F /* Pods-FavoritePrimes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes.debug.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes/Pods-FavoritePrimes.debug.xcconfig"; sourceTree = "<group>"; };
 		3D6AB164486F80D1D1E64459 /* Pods-Counter-CounterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter-CounterTests.debug.xcconfig"; path = "Target Support Files/Pods-Counter-CounterTests/Pods-Counter-CounterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		49795EFFDA83D20C8CADEEE7 /* Pods-Counter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Counter.release.xcconfig"; path = "Target Support Files/Pods-Counter/Pods-Counter.release.xcconfig"; sourceTree = "<group>"; };
+		52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FavoritePrimes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		618A87886B26D71340E6B224 /* Pods_Counter_CounterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Counter_CounterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BA967B4ABDB4FFCDC489DD1 /* Pods-FavoritePrimes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes.release.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes/Pods-FavoritePrimes.release.xcconfig"; sourceTree = "<group>"; };
 		9DE8D1821D74CC2B20402FFC /* Pods-RxPrimeTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTime.debug.xcconfig"; path = "Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime.debug.xcconfig"; sourceTree = "<group>"; };
 		9FF3AD2ED279F6285C3B3601 /* Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig"; sourceTree = "<group>"; };
 		A799C7FC5B3968E7C878BCA6 /* Pods_ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +231,7 @@
 		D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComposableArchitecture_ComposableArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E39A1F00BD55E832B7719 /* Pods-RxPrimeTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.debug.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6A5FDF5389E773DC2FE2F2A /* Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPrimeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +288,15 @@
 		F8B1150423F855DC00DA6466 /* CounterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
 		F8B1150623F8594E00DA6466 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		F8B1150823F859EA00DA6466 /* Counter+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+Environment.swift"; sourceTree = "<group>"; };
+		F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FavoritePrimes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B1151423F86D3500DA6466 /* FavoritePrimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritePrimes.h; sourceTree = "<group>"; };
+		F8B1151523F86D3500DA6466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B1151A23F86D3500DA6466 /* FavoritePrimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavoritePrimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B1152123F86D3500DA6466 /* FavoritePrimesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimesTests.swift; sourceTree = "<group>"; };
+		F8B1152323F86D3500DA6466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimes.swift; sourceTree = "<group>"; };
+		F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Environment.swift"; sourceTree = "<group>"; };
+		F8B1153323F86F1C00DA6466 /* FileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +306,7 @@
 			files = (
 				F87E5DC523F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */,
 				F8B113F323F7D91800DA6466 /* Counter.framework in Frameworks */,
+				F8B1152723F86D3500DA6466 /* FavoritePrimes.framework in Frameworks */,
 				CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */,
 				F8B114E423F7EDC800DA6466 /* SceneBuilder.framework in Frameworks */,
 				F8B114C223F7ED3F00DA6466 /* Networking.framework in Frameworks */,
@@ -337,6 +385,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B1150F23F86D3500DA6466 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB2EB6BDDCBEA4D2D63AA95C /* Pods_FavoritePrimes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B1151723F86D3500DA6466 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B1151B23F86D3500DA6466 /* FavoritePrimes.framework in Frameworks */,
+				B7F974C73B90CC78168DE7F3 /* Pods_FavoritePrimes_FavoritePrimesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -355,6 +420,10 @@
 				49795EFFDA83D20C8CADEEE7 /* Pods-Counter.release.xcconfig */,
 				3D6AB164486F80D1D1E64459 /* Pods-Counter-CounterTests.debug.xcconfig */,
 				CB165DC9152D4671E4B6A648 /* Pods-Counter-CounterTests.release.xcconfig */,
+				2CB0212D371B08FF4E83FD3F /* Pods-FavoritePrimes.debug.xcconfig */,
+				7BA967B4ABDB4FFCDC489DD1 /* Pods-FavoritePrimes.release.xcconfig */,
+				E6A5FDF5389E773DC2FE2F2A /* Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig */,
+				0CD25A9689E7B506F8A6EC5F /* Pods-FavoritePrimes-FavoritePrimesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -373,6 +442,8 @@
 				F8B114BB23F7ED3F00DA6466 /* NetworkingTests */,
 				F8B114D023F7EDC800DA6466 /* SceneBuilder */,
 				F8B114EC23F8540800DA6466 /* SceneBuilderTests */,
+				F8B1151323F86D3500DA6466 /* FavoritePrimes */,
+				F8B1152023F86D3500DA6466 /* FavoritePrimesTests */,
 				F87E5D7E23F7D3EA00FEC92D /* Products */,
 				F87E5DA823F7D4F000FEC92D /* Frameworks */,
 				D7611B93963D08CB012EA578 /* Pods */,
@@ -392,6 +463,8 @@
 				F8B114B523F7ED3F00DA6466 /* NetworkingTests.xctest */,
 				F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */,
 				F8B114D723F7EDC800DA6466 /* SceneBuilderTests.xctest */,
+				F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */,
+				F8B1151A23F86D3500DA6466 /* FavoritePrimesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,6 +502,8 @@
 				27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */,
 				1224FE20A287BAED3AB4B05A /* Pods_Counter.framework */,
 				618A87886B26D71340E6B224 /* Pods_Counter_CounterTests.framework */,
+				52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */,
+				09D6269044A9EE80C141F3C0 /* Pods_FavoritePrimes_FavoritePrimesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -547,6 +622,27 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
+		F8B1151323F86D3500DA6466 /* FavoritePrimes */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */,
+				F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */,
+				F8B1153323F86F1C00DA6466 /* FileClient.swift */,
+				F8B1151423F86D3500DA6466 /* FavoritePrimes.h */,
+				F8B1151523F86D3500DA6466 /* Info.plist */,
+			);
+			path = FavoritePrimes;
+			sourceTree = "<group>";
+		};
+		F8B1152023F86D3500DA6466 /* FavoritePrimesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1152123F86D3500DA6466 /* FavoritePrimesTests.swift */,
+				F8B1152323F86D3500DA6466 /* Info.plist */,
+			);
+			path = FavoritePrimesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -582,6 +678,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B1150D23F86D3500DA6466 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B1152423F86D3500DA6466 /* FavoritePrimes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -603,10 +707,9 @@
 				F8B113F223F7D91800DA6466 /* PBXTargetDependency */,
 				F8B114C123F7ED3F00DA6466 /* PBXTargetDependency */,
 				F8B114E323F7EDC800DA6466 /* PBXTargetDependency */,
+				F8B1152623F86D3500DA6466 /* PBXTargetDependency */,
 			);
 			name = RxPrimeTime;
-			packageProductDependencies = (
-			);
 			productName = RxPrimeTime;
 			productReference = F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */;
 			productType = "com.apple.product-type.application";
@@ -785,6 +888,46 @@
 			productReference = F8B114D723F7EDC800DA6466 /* SceneBuilderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F8B1151123F86D3500DA6466 /* FavoritePrimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B1152923F86D3500DA6466 /* Build configuration list for PBXNativeTarget "FavoritePrimes" */;
+			buildPhases = (
+				386863685CF2C2C808EE2382 /* [CP] Check Pods Manifest.lock */,
+				F8B1150D23F86D3500DA6466 /* Headers */,
+				F8B1150E23F86D3500DA6466 /* Sources */,
+				F8B1150F23F86D3500DA6466 /* Frameworks */,
+				F8B1151023F86D3500DA6466 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FavoritePrimes;
+			productName = FavoritePrimes;
+			productReference = F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F8B1151923F86D3500DA6466 /* FavoritePrimesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B1152C23F86D3500DA6466 /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */;
+			buildPhases = (
+				DB96BFD4748E8AEA731F0BC0 /* [CP] Check Pods Manifest.lock */,
+				F8B1151623F86D3500DA6466 /* Sources */,
+				F8B1151723F86D3500DA6466 /* Frameworks */,
+				F8B1151823F86D3500DA6466 /* Resources */,
+				807389DF41C5A2F6BFDA3BE1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8B1151D23F86D3500DA6466 /* PBXTargetDependency */,
+				F8B1151F23F86D3500DA6466 /* PBXTargetDependency */,
+			);
+			name = FavoritePrimesTests;
+			productName = FavoritePrimesTests;
+			productReference = F8B1151A23F86D3500DA6466 /* FavoritePrimesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -834,6 +977,14 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = F87E5D7C23F7D3EA00FEC92D;
 					};
+					F8B1151123F86D3500DA6466 = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					F8B1151923F86D3500DA6466 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F87E5D7C23F7D3EA00FEC92D;
+					};
 				};
 			};
 			buildConfigurationList = F87E5D7823F7D3EA00FEC92D /* Build configuration list for PBXProject "RxPrimeTime" */;
@@ -859,6 +1010,8 @@
 				F8B114B423F7ED3F00DA6466 /* NetworkingTests */,
 				F8B114CE23F7EDC800DA6466 /* SceneBuilder */,
 				F8B114D623F7EDC800DA6466 /* SceneBuilderTests */,
+				F8B1151123F86D3500DA6466 /* FavoritePrimes */,
+				F8B1151923F86D3500DA6466 /* FavoritePrimesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -940,6 +1093,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B1151023F86D3500DA6466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B1151823F86D3500DA6466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1004,6 +1171,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Counter-CounterTests/Pods-Counter-CounterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		386863685CF2C2C808EE2382 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FavoritePrimes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5394106AD79EDEC259A38119 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1058,6 +1247,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		807389DF41C5A2F6BFDA3BE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		887646ADF62CCD85231D3CD0 /* [CP] Embed Pods Frameworks */ = {
@@ -1115,6 +1321,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RxPrimeTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB96BFD4748E8AEA731F0BC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FavoritePrimes-FavoritePrimesTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1244,6 +1472,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8B1150E23F86D3500DA6466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B1153023F86D6700DA6466 /* FavoritePrimes.swift in Sources */,
+				F8B1153423F86F1C00DA6466 /* FileClient.swift in Sources */,
+				F8B1153223F86E3C00DA6466 /* Favorite+Environment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B1151623F86D3500DA6466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B1152223F86D3500DA6466 /* FavoritePrimesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1311,6 +1557,21 @@
 			isa = PBXTargetDependency;
 			target = F8B114CE23F7EDC800DA6466 /* SceneBuilder */;
 			targetProxy = F8B114E223F7EDC800DA6466 /* PBXContainerItemProxy */;
+		};
+		F8B1151D23F86D3500DA6466 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B1151123F86D3500DA6466 /* FavoritePrimes */;
+			targetProxy = F8B1151C23F86D3500DA6466 /* PBXContainerItemProxy */;
+		};
+		F8B1151F23F86D3500DA6466 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */;
+			targetProxy = F8B1151E23F86D3500DA6466 /* PBXContainerItemProxy */;
+		};
+		F8B1152623F86D3500DA6466 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B1151123F86D3500DA6466 /* FavoritePrimes */;
+			targetProxy = F8B1152523F86D3500DA6466 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1930,6 +2191,111 @@
 			};
 			name = Release;
 		};
+		F8B1152A23F86D3500DA6466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CB0212D371B08FF4E83FD3F /* Pods-FavoritePrimes.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FavoritePrimes/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8B1152B23F86D3500DA6466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA967B4ABDB4FFCDC489DD1 /* Pods-FavoritePrimes.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FavoritePrimes/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8B1152D23F86D3500DA6466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A5FDF5389E773DC2FE2F2A /* Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = FavoritePrimesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
+			};
+			name = Debug;
+		};
+		F8B1152E23F86D3500DA6466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD25A9689E7B506F8A6EC5F /* Pods-FavoritePrimes-FavoritePrimesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = FavoritePrimesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2028,6 +2394,24 @@
 			buildConfigurations = (
 				F8B114EA23F7EDC800DA6466 /* Debug */,
 				F8B114EB23F7EDC800DA6466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B1152923F86D3500DA6466 /* Build configuration list for PBXNativeTarget "FavoritePrimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B1152A23F86D3500DA6466 /* Debug */,
+				F8B1152B23F86D3500DA6466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B1152C23F86D3500DA6466 /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B1152D23F86D3500DA6466 /* Debug */,
+				F8B1152E23F86D3500DA6466 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

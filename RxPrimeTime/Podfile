@@ -18,6 +18,25 @@ target 'ComposableArchitecture' do
 
 end
 
+target 'FavoritePrimes' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Counter
+   pod 'RxSwift', '~> 5'
+   pod 'RxCocoa', '~> 5'
+   pod 'SwiftSpinner'
+
+  target 'FavoritePrimesTests' do
+    # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    
+  end
+
+end
+
+
 target 'Counter' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -25,7 +44,7 @@ target 'Counter' do
   # Pods for Counter
    pod 'RxSwift', '~> 5'
    pod 'RxCocoa', '~> 5'
-   pod 'SwiftSpinner'#, '~> 1.5.0'
+   pod 'SwiftSpinner'
 
   target 'CounterTests' do
     # Pods for testing
@@ -43,7 +62,7 @@ target 'RxPrimeTime' do
   # Pods for RxPrimeTime
    pod 'RxSwift', '~> 5'
    pod 'RxCocoa', '~> 5'
-   pod 'SwiftSpinner'#, '~> 1.5.0'
+   pod 'SwiftSpinner'
 
   target 'RxPrimeTimeTests' do
     inherit! :search_paths
