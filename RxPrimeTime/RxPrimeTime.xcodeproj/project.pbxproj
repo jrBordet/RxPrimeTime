@@ -34,6 +34,10 @@
 		F8B113F323F7D91800DA6466 /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B113DE23F7D91700DA6466 /* Counter.framework */; };
 		F8B113F423F7D91800DA6466 /* Counter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B113DE23F7D91700DA6466 /* Counter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8B1141823F7DD2200DA6466 /* PrimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141723F7DD2200DA6466 /* PrimeModal.swift */; };
+		F8B1141A23F7DD6600DA6466 /* PrimeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */; };
+		F8B1141C23F7DD9000DA6466 /* PrimeModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */; };
+		F8B1141E23F7DDBB00DA6466 /* Rx+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */; };
+		F8B1141F23F7DE2A00DA6466 /* Rx+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +154,9 @@
 		F8B113EF23F7D91800DA6466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B1141523F7D9F800DA6466 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 		F8B1141723F7DD2200DA6466 /* PrimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeModal.swift; sourceTree = "<group>"; };
+		F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeModalViewController.swift; sourceTree = "<group>"; };
+		F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrimeModalViewController.xib; sourceTree = "<group>"; };
+		F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +274,7 @@
 				F87E5D8E23F7D3EC00FEC92D /* Info.plist */,
 				F87E5DA423F7D4C600FEC92D /* MainViewController.swift */,
 				F87E5DA523F7D4C600FEC92D /* MainViewController.xib */,
+				F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */,
 			);
 			path = RxPrimeTime;
 			sourceTree = "<group>";
@@ -336,7 +344,9 @@
 		F8B1141623F7DD1600DA6466 /* PrimeModal */ = {
 			isa = PBXGroup;
 			children = (
+				F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */,
 				F8B1141723F7DD2200DA6466 /* PrimeModal.swift */,
+				F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */,
 			);
 			path = PrimeModal;
 			sourceTree = "<group>";
@@ -581,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B1141C23F7DD9000DA6466 /* PrimeModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +796,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87E5DA623F7D4C600FEC92D /* MainViewController.swift in Sources */,
+				F8B1141E23F7DDBB00DA6466 /* Rx+extensions.swift in Sources */,
 				F87E5D8123F7D3EA00FEC92D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,6 +831,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B1141A23F7DD6600DA6466 /* PrimeModalViewController.swift in Sources */,
+				F8B1141F23F7DE2A00DA6466 /* Rx+extensions.swift in Sources */,
 				F8B1141823F7DD2200DA6466 /* PrimeModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
