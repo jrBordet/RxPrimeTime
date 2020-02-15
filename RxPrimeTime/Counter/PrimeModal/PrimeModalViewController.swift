@@ -40,6 +40,8 @@ public class PrimeModalViewController: UIViewController {
             return
         }
         
+        //self.store = Store<PrimeModalState, PrimeModalAction>.init(initialValue: (count: 2, favoritePrimes: [5,7]), reducer: primeModalReducer(state:action:))
+        
         store
             .value
             .map { isPrime($0.count) ? "\($0.count) is prime 🎉" : "\($0.count) is not prime 😅" }
