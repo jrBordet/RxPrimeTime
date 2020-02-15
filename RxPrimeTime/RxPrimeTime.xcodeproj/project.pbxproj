@@ -52,6 +52,12 @@
 		F8B114EF23F8540800DA6466 /* SceneBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114ED23F8540800DA6466 /* SceneBuilderTests.swift */; };
 		F8B114F023F8540800DA6466 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B114EE23F8540800DA6466 /* Info.plist */; };
 		F8B114F223F8543300DA6466 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F123F8543300DA6466 /* SceneBuilder.swift */; };
+		F8B114FA23F854E400DA6466 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F323F854E400DA6466 /* Networking.swift */; };
+		F8B114FB23F854E400DA6466 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F423F854E400DA6466 /* APIRequest.swift */; };
+		F8B114FC23F854E400DA6466 /* Logging+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F523F854E400DA6466 /* Logging+.swift */; };
+		F8B114FD23F854E400DA6466 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F623F854E400DA6466 /* Operators.swift */; };
+		F8B114FE23F854E400DA6466 /* Requests+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F823F854E400DA6466 /* Requests+.swift */; };
+		F8B114FF23F854E400DA6466 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F923F854E400DA6466 /* HTTPStatusCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +234,12 @@
 		F8B114ED23F8540800DA6466 /* SceneBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneBuilderTests.swift; sourceTree = "<group>"; };
 		F8B114EE23F8540800DA6466 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B114F123F8543300DA6466 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
+		F8B114F323F854E400DA6466 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		F8B114F423F854E400DA6466 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F8B114F523F854E400DA6466 /* Logging+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logging+.swift"; sourceTree = "<group>"; };
+		F8B114F623F854E400DA6466 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		F8B114F823F854E400DA6466 /* Requests+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Requests+.swift"; sourceTree = "<group>"; };
+		F8B114F923F854E400DA6466 /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +476,12 @@
 		F8B114AE23F7ED3F00DA6466 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F8B114F423F854E400DA6466 /* APIRequest.swift */,
+				F8B114F923F854E400DA6466 /* HTTPStatusCodes.swift */,
+				F8B114F523F854E400DA6466 /* Logging+.swift */,
+				F8B114F323F854E400DA6466 /* Networking.swift */,
+				F8B114F623F854E400DA6466 /* Operators.swift */,
+				F8B114F723F854E400DA6466 /* Requests */,
 				F8B114AF23F7ED3F00DA6466 /* Networking.h */,
 				F8B114B023F7ED3F00DA6466 /* Info.plist */,
 			);
@@ -496,6 +514,14 @@
 				F8B114EE23F8540800DA6466 /* Info.plist */,
 			);
 			path = SceneBuilderTests;
+			sourceTree = "<group>";
+		};
+		F8B114F723F854E400DA6466 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B114F823F854E400DA6466 /* Requests+.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -771,6 +797,7 @@
 					};
 					F8B114AC23F7ED3F00DA6466 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					F8B114B423F7ED3F00DA6466 = {
 						CreatedOnToolsVersion = 11.3;
@@ -1156,6 +1183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B114FC23F854E400DA6466 /* Logging+.swift in Sources */,
+				F8B114FD23F854E400DA6466 /* Operators.swift in Sources */,
+				F8B114FB23F854E400DA6466 /* APIRequest.swift in Sources */,
+				F8B114FA23F854E400DA6466 /* Networking.swift in Sources */,
+				F8B114FF23F854E400DA6466 /* HTTPStatusCodes.swift in Sources */,
+				F8B114FE23F854E400DA6466 /* Requests+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1670,6 +1703,7 @@
 		F8B114C523F7ED3F00DA6466 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1688,6 +1722,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1698,6 +1733,7 @@
 		F8B114C623F7ED3F00DA6466 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
