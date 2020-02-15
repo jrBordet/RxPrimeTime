@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27ADE9D1C19A2BFECF33B5EC /* Pods_ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A799C7FC5B3968E7C878BCA6 /* Pods_ComposableArchitecture.framework */; };
+		60D1C2C01FA1EC565C754EFB /* Pods_RxPrimeTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */; };
+		A5A00BFB6176A846A3D26CFC /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */; };
+		CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */; };
 		F87E5D8123F7D3EA00FEC92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */; };
 		F87E5D8A23F7D3EC00FEC92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */; };
 		F87E5D8D23F7D3EC00FEC92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8B23F7D3EC00FEC92D /* LaunchScreen.storyboard */; };
@@ -14,6 +18,14 @@
 		F87E5DA623F7D4C600FEC92D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DA423F7D4C600FEC92D /* MainViewController.swift */; };
 		F87E5DA723F7D4C600FEC92D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F87E5DA523F7D4C600FEC92D /* MainViewController.xib */; };
 		F87E5DAA23F7D4F000FEC92D /* SceneBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = F87E5DA923F7D4F000FEC92D /* SceneBuilder */; };
+		F87E5DB923F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */; };
+		F87E5DC023F7D60B00FEC92D /* ComposableArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DBF23F7D60B00FEC92D /* ComposableArchitectureTests.swift */; };
+		F87E5DC223F7D60B00FEC92D /* ComposableArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = F87E5DB223F7D60B00FEC92D /* ComposableArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F87E5DC523F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */; };
+		F87E5DC623F7D60B00FEC92D /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F87E5DCF23F7D61C00FEC92D /* ComposableArchitecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DCE23F7D61C00FEC92D /* ComposableArchitecture.swift */; };
+		F87E5DD123F7D70100FEC92D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DD023F7D70100FEC92D /* Utils.swift */; };
+		F87E5DD323F7D72700FEC92D /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DD223F7D72700FEC92D /* Effect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,9 +36,56 @@
 			remoteGlobalIDString = F87E5D7C23F7D3EA00FEC92D;
 			remoteInfo = RxPrimeTime;
 		};
+		F87E5DBA23F7D60B00FEC92D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87E5DAF23F7D60B00FEC92D;
+			remoteInfo = ComposableArchitecture;
+		};
+		F87E5DBC23F7D60B00FEC92D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87E5D7C23F7D3EA00FEC92D;
+			remoteInfo = RxPrimeTime;
+		};
+		F87E5DC323F7D60B00FEC92D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F87E5DAF23F7D60B00FEC92D;
+			remoteInfo = ComposableArchitecture;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F87E5DCA23F7D60B00FEC92D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F87E5DC623F7D60B00FEC92D /* ComposableArchitecture.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0325EC23D84268FF2419C2CF /* Pods-RxPrimeTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTime.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime.release.xcconfig"; sourceTree = "<group>"; };
+		0ED9B4EB18967B2C9F09F23F /* Pods-ComposableArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture.release.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture/Pods-ComposableArchitecture.release.xcconfig"; sourceTree = "<group>"; };
+		27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE8D1821D74CC2B20402FFC /* Pods-RxPrimeTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTime.debug.xcconfig"; path = "Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime.debug.xcconfig"; sourceTree = "<group>"; };
+		9FF3AD2ED279F6285C3B3601 /* Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig"; sourceTree = "<group>"; };
+		A799C7FC5B3968E7C878BCA6 /* Pods_ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA62941AA4456523D3F98656 /* Pods-ComposableArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture/Pods-ComposableArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
+		C00CCC4132D38FD5305A3E36 /* Pods-ComposableArchitecture-ComposableArchitectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComposableArchitecture-ComposableArchitectureTests.debug.xcconfig"; path = "Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComposableArchitecture_ComposableArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9E39A1F00BD55E832B7719 /* Pods-RxPrimeTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.debug.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPrimeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +97,15 @@
 		F87E5DA323F7D43700FEC92D /* SceneBuilder */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SceneBuilder; path = ../SceneBuilder; sourceTree = "<group>"; };
 		F87E5DA423F7D4C600FEC92D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F87E5DA523F7D4C600FEC92D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87E5DB223F7D60B00FEC92D /* ComposableArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposableArchitecture.h; sourceTree = "<group>"; };
+		F87E5DB323F7D60B00FEC92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F87E5DB823F7D60B00FEC92D /* ComposableArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87E5DBF23F7D60B00FEC92D /* ComposableArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitectureTests.swift; sourceTree = "<group>"; };
+		F87E5DC123F7D60B00FEC92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F87E5DCE23F7D61C00FEC92D /* ComposableArchitecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitecture.swift; sourceTree = "<group>"; };
+		F87E5DD023F7D70100FEC92D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F87E5DD223F7D72700FEC92D /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87E5DC523F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */,
 				F87E5DAA23F7D4F000FEC92D /* SceneBuilder in Frameworks */,
+				CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,20 +123,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D1C2C01FA1EC565C754EFB /* Pods_RxPrimeTimeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87E5DAD23F7D60B00FEC92D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27ADE9D1C19A2BFECF33B5EC /* Pods_ComposableArchitecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87E5DB523F7D60B00FEC92D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87E5DB923F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */,
+				A5A00BFB6176A846A3D26CFC /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7611B93963D08CB012EA578 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA62941AA4456523D3F98656 /* Pods-ComposableArchitecture.debug.xcconfig */,
+				0ED9B4EB18967B2C9F09F23F /* Pods-ComposableArchitecture.release.xcconfig */,
+				C00CCC4132D38FD5305A3E36 /* Pods-ComposableArchitecture-ComposableArchitectureTests.debug.xcconfig */,
+				9FF3AD2ED279F6285C3B3601 /* Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig */,
+				9DE8D1821D74CC2B20402FFC /* Pods-RxPrimeTime.debug.xcconfig */,
+				0325EC23D84268FF2419C2CF /* Pods-RxPrimeTime.release.xcconfig */,
+				DC9E39A1F00BD55E832B7719 /* Pods-RxPrimeTimeTests.debug.xcconfig */,
+				E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F87E5D7423F7D3EA00FEC92D = {
 			isa = PBXGroup;
 			children = (
 				F87E5DA323F7D43700FEC92D /* SceneBuilder */,
 				F87E5D7F23F7D3EA00FEC92D /* RxPrimeTime */,
 				F87E5D9623F7D3EC00FEC92D /* RxPrimeTimeTests */,
+				F87E5DB123F7D60B00FEC92D /* ComposableArchitecture */,
+				F87E5DBE23F7D60B00FEC92D /* ComposableArchitectureTests */,
 				F87E5D7E23F7D3EA00FEC92D /* Products */,
 				F87E5DA823F7D4F000FEC92D /* Frameworks */,
+				D7611B93963D08CB012EA578 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +181,8 @@
 			children = (
 				F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */,
 				F87E5D9323F7D3EC00FEC92D /* RxPrimeTimeTests.xctest */,
+				F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */,
+				F87E5DB823F7D60B00FEC92D /* ComposableArchitectureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,24 +212,64 @@
 		F87E5DA823F7D4F000FEC92D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A799C7FC5B3968E7C878BCA6 /* Pods_ComposableArchitecture.framework */,
+				D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */,
+				ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */,
+				27C521D4C3BE0E516D1AE5FD /* Pods_RxPrimeTimeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F87E5DB123F7D60B00FEC92D /* ComposableArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				F87E5DB223F7D60B00FEC92D /* ComposableArchitecture.h */,
+				F87E5DB323F7D60B00FEC92D /* Info.plist */,
+				F87E5DCE23F7D61C00FEC92D /* ComposableArchitecture.swift */,
+				F87E5DD023F7D70100FEC92D /* Utils.swift */,
+				F87E5DD223F7D72700FEC92D /* Effect.swift */,
+			);
+			path = ComposableArchitecture;
+			sourceTree = "<group>";
+		};
+		F87E5DBE23F7D60B00FEC92D /* ComposableArchitectureTests */ = {
+			isa = PBXGroup;
+			children = (
+				F87E5DBF23F7D60B00FEC92D /* ComposableArchitectureTests.swift */,
+				F87E5DC123F7D60B00FEC92D /* Info.plist */,
+			);
+			path = ComposableArchitectureTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F87E5DAB23F7D60B00FEC92D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87E5DC223F7D60B00FEC92D /* ComposableArchitecture.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F87E5D9C23F7D3EC00FEC92D /* Build configuration list for PBXNativeTarget "RxPrimeTime" */;
 			buildPhases = (
+				D3C9AD5DF63D4C25BAFA8815 /* [CP] Check Pods Manifest.lock */,
 				F87E5D7923F7D3EA00FEC92D /* Sources */,
 				F87E5D7A23F7D3EA00FEC92D /* Frameworks */,
 				F87E5D7B23F7D3EA00FEC92D /* Resources */,
+				F87E5DCA23F7D60B00FEC92D /* Embed Frameworks */,
+				806E2630E45FBC9D27333293 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F87E5DC423F7D60B00FEC92D /* PBXTargetDependency */,
 			);
 			name = RxPrimeTime;
 			packageProductDependencies = (
@@ -135,6 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F87E5D9F23F7D3EC00FEC92D /* Build configuration list for PBXNativeTarget "RxPrimeTimeTests" */;
 			buildPhases = (
+				5EB2F9C47B3C5FC0F1326E4F /* [CP] Check Pods Manifest.lock */,
 				F87E5D8F23F7D3EC00FEC92D /* Sources */,
 				F87E5D9023F7D3EC00FEC92D /* Frameworks */,
 				F87E5D9123F7D3EC00FEC92D /* Resources */,
@@ -147,6 +296,46 @@
 			name = RxPrimeTimeTests;
 			productName = RxPrimeTimeTests;
 			productReference = F87E5D9323F7D3EC00FEC92D /* RxPrimeTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F87E5DAF23F7D60B00FEC92D /* ComposableArchitecture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F87E5DC723F7D60B00FEC92D /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */;
+			buildPhases = (
+				2D4857FCF2D42B5DF82F230E /* [CP] Check Pods Manifest.lock */,
+				F87E5DAB23F7D60B00FEC92D /* Headers */,
+				F87E5DAC23F7D60B00FEC92D /* Sources */,
+				F87E5DAD23F7D60B00FEC92D /* Frameworks */,
+				F87E5DAE23F7D60B00FEC92D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComposableArchitecture;
+			productName = ComposableArchitecture;
+			productReference = F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F87E5DB723F7D60B00FEC92D /* ComposableArchitectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F87E5DCB23F7D60B00FEC92D /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */;
+			buildPhases = (
+				23F09C3087D6CA9FCDF54D57 /* [CP] Check Pods Manifest.lock */,
+				F87E5DB423F7D60B00FEC92D /* Sources */,
+				F87E5DB523F7D60B00FEC92D /* Frameworks */,
+				F87E5DB623F7D60B00FEC92D /* Resources */,
+				5394106AD79EDEC259A38119 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F87E5DBB23F7D60B00FEC92D /* PBXTargetDependency */,
+				F87E5DBD23F7D60B00FEC92D /* PBXTargetDependency */,
+			);
+			name = ComposableArchitectureTests;
+			productName = ComposableArchitectureTests;
+			productReference = F87E5DB823F7D60B00FEC92D /* ComposableArchitectureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -163,6 +352,14 @@
 						CreatedOnToolsVersion = 11.3;
 					};
 					F87E5D9223F7D3EC00FEC92D = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F87E5D7C23F7D3EA00FEC92D;
+					};
+					F87E5DAF23F7D60B00FEC92D = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					F87E5DB723F7D60B00FEC92D = {
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = F87E5D7C23F7D3EA00FEC92D;
 					};
@@ -183,6 +380,8 @@
 			targets = (
 				F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */,
 				F87E5D9223F7D3EC00FEC92D /* RxPrimeTimeTests */,
+				F87E5DAF23F7D60B00FEC92D /* ComposableArchitecture */,
+				F87E5DB723F7D60B00FEC92D /* ComposableArchitectureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +404,146 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F87E5DAE23F7D60B00FEC92D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87E5DB623F7D60B00FEC92D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23F09C3087D6CA9FCDF54D57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ComposableArchitecture-ComposableArchitectureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D4857FCF2D42B5DF82F230E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ComposableArchitecture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5394106AD79EDEC259A38119 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ComposableArchitecture-ComposableArchitectureTests/Pods-ComposableArchitecture-ComposableArchitectureTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EB2F9C47B3C5FC0F1326E4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxPrimeTimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		806E2630E45FBC9D27333293 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3C9AD5DF63D4C25BAFA8815 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxPrimeTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F87E5D7923F7D3EA00FEC92D /* Sources */ = {
@@ -225,6 +563,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F87E5DAC23F7D60B00FEC92D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87E5DD323F7D72700FEC92D /* Effect.swift in Sources */,
+				F87E5DCF23F7D61C00FEC92D /* ComposableArchitecture.swift in Sources */,
+				F87E5DD123F7D70100FEC92D /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F87E5DB423F7D60B00FEC92D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F87E5DC023F7D60B00FEC92D /* ComposableArchitectureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +588,21 @@
 			isa = PBXTargetDependency;
 			target = F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */;
 			targetProxy = F87E5D9423F7D3EC00FEC92D /* PBXContainerItemProxy */;
+		};
+		F87E5DBB23F7D60B00FEC92D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87E5DAF23F7D60B00FEC92D /* ComposableArchitecture */;
+			targetProxy = F87E5DBA23F7D60B00FEC92D /* PBXContainerItemProxy */;
+		};
+		F87E5DBD23F7D60B00FEC92D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */;
+			targetProxy = F87E5DBC23F7D60B00FEC92D /* PBXContainerItemProxy */;
+		};
+		F87E5DC423F7D60B00FEC92D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F87E5DAF23F7D60B00FEC92D /* ComposableArchitecture */;
+			targetProxy = F87E5DC323F7D60B00FEC92D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -363,7 +734,9 @@
 		};
 		F87E5D9D23F7D3EC00FEC92D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE8D1821D74CC2B20402FFC /* Pods-RxPrimeTime.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
@@ -381,7 +754,9 @@
 		};
 		F87E5D9E23F7D3EC00FEC92D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0325EC23D84268FF2419C2CF /* Pods-RxPrimeTime.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
@@ -399,6 +774,7 @@
 		};
 		F87E5DA023F7D3EC00FEC92D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9E39A1F00BD55E832B7719 /* Pods-RxPrimeTimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -421,6 +797,7 @@
 		};
 		F87E5DA123F7D3EC00FEC92D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -434,6 +811,107 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.RxPrimeTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
+			};
+			name = Release;
+		};
+		F87E5DC823F7D60B00FEC92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA62941AA4456523D3F98656 /* Pods-ComposableArchitecture.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ComposableArchitecture/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F87E5DC923F7D60B00FEC92D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ED9B4EB18967B2C9F09F23F /* Pods-ComposableArchitecture.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ComposableArchitecture/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F87E5DCC23F7D60B00FEC92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C00CCC4132D38FD5305A3E36 /* Pods-ComposableArchitecture-ComposableArchitectureTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = ComposableArchitectureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.ComposableArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
+			};
+			name = Debug;
+		};
+		F87E5DCD23F7D60B00FEC92D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF3AD2ED279F6285C3B3601 /* Pods-ComposableArchitecture-ComposableArchitectureTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = ComposableArchitectureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.ComposableArchitectureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,6 +945,24 @@
 			buildConfigurations = (
 				F87E5DA023F7D3EC00FEC92D /* Debug */,
 				F87E5DA123F7D3EC00FEC92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F87E5DC723F7D60B00FEC92D /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F87E5DC823F7D60B00FEC92D /* Debug */,
+				F87E5DC923F7D60B00FEC92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F87E5DCB23F7D60B00FEC92D /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F87E5DCC23F7D60B00FEC92D /* Debug */,
+				F87E5DCD23F7D60B00FEC92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
