@@ -413,9 +413,9 @@
 		F87E5D9623F7D3EC00FEC92D /* RxPrimeTimeTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */,
 				F87E5D9723F7D3EC00FEC92D /* RxPrimeTimeTests.swift */,
 				F87E5D9923F7D3EC00FEC92D /* Info.plist */,
-				F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */,
 			);
 			path = RxPrimeTimeTests;
 			sourceTree = "<group>";
@@ -1485,7 +1485,6 @@
 			baseConfigurationReference = DC9E39A1F00BD55E832B7719 /* Pods-RxPrimeTimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = RxPrimeTimeTests/Info.plist;
@@ -1508,7 +1507,6 @@
 			baseConfigurationReference = E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = RxPrimeTimeTests/Info.plist;
