@@ -157,6 +157,7 @@
 		F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeModalViewController.swift; sourceTree = "<group>"; };
 		F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrimeModalViewController.xib; sourceTree = "<group>"; };
 		F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extensions.swift"; sourceTree = "<group>"; };
+		F8B1142123F7DF2F00DA6466 /* PrimeTime.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = PrimeTime.playground; path = ../PrimeTime.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +239,7 @@
 		F87E5D7423F7D3EA00FEC92D = {
 			isa = PBXGroup;
 			children = (
+				F8B1142123F7DF2F00DA6466 /* PrimeTime.playground */,
 				F8B1141523F7D9F800DA6466 /* Networking */,
 				F87E5DA323F7D43700FEC92D /* SceneBuilder */,
 				F87E5D7F23F7D3EA00FEC92D /* RxPrimeTime */,
