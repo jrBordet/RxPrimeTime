@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritePrimesViewController" customModule="PrimeTime" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritePrimesViewController" customModule="FavoritePrimes" customModuleProvider="target">
             <connections>
                 <outlet property="loadButton" destination="eo8-4k-CKc" id="Sne-de-l0L"/>
                 <outlet property="saveButton" destination="Nph-WI-omL" id="cLC-2u-nlK"/>
@@ -25,25 +25,27 @@
                     <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pND-IA-EOA">
-                    <rect key="frame" x="264" y="782" width="134" height="64"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pND-IA-EOA">
+                    <rect key="frame" x="342" y="719" width="56" height="127"/>
                     <subviews>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-WI-omL">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="64" id="9CU-8E-700"/>
-                                <constraint firstAttribute="width" constant="64" id="rc7-sq-NPT"/>
+                                <constraint firstAttribute="height" constant="56" id="9CU-8E-700"/>
+                                <constraint firstAttribute="width" constant="56" id="rc7-sq-NPT"/>
                             </constraints>
+                            <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="save"/>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-4k-CKc">
-                            <rect key="frame" x="70" y="0.0" width="64" height="64"/>
-                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="71" width="56" height="56"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="64" id="SHn-eo-ghH"/>
-                                <constraint firstAttribute="height" constant="64" id="fab-Pf-fZd"/>
+                                <constraint firstAttribute="width" constant="56" id="SHn-eo-ghH"/>
+                                <constraint firstAttribute="height" constant="56" id="fab-Pf-fZd"/>
                             </constraints>
+                            <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="load"/>
                         </button>
                     </subviews>
