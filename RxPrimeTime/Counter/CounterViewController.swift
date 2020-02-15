@@ -24,12 +24,26 @@ public class CounterViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         guard let store = self.store else {
             return
         }
+        
+//        Store<CounterViewState, CounterViewAction>.init(initialValue: CounterViewState(count: 0, favoritePrimes: [], isLoading: false, alertNthPrime: nibName), reducer: counterViewReducer)
         
         store
             .value
