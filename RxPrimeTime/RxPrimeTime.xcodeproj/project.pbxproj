@@ -19,7 +19,7 @@
 		F87E5D9823F7D3EC00FEC92D /* RxPrimeTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5D9723F7D3EC00FEC92D /* RxPrimeTimeTests.swift */; };
 		F87E5DA623F7D4C600FEC92D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DA423F7D4C600FEC92D /* MainViewController.swift */; };
 		F87E5DA723F7D4C600FEC92D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F87E5DA523F7D4C600FEC92D /* MainViewController.xib */; };
-		F87E5DAA23F7D4F000FEC92D /* SceneBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = F87E5DA923F7D4F000FEC92D /* SceneBuilder */; };
+		F87E5DAA23F7D4F000FEC92D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = F87E5DA923F7D4F000FEC92D /* SwiftPackageProductDependency */; };
 		F87E5DB923F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87E5DB023F7D60B00FEC92D /* ComposableArchitecture.framework */; };
 		F87E5DC023F7D60B00FEC92D /* ComposableArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5DBF23F7D60B00FEC92D /* ComposableArchitectureTests.swift */; };
 		F87E5DC223F7D60B00FEC92D /* ComposableArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = F87E5DB223F7D60B00FEC92D /* ComposableArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +38,9 @@
 		F8B1141C23F7DD9000DA6466 /* PrimeModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */; };
 		F8B1141E23F7DDBB00DA6466 /* Rx+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */; };
 		F8B1141F23F7DE2A00DA6466 /* Rx+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */; };
+		F8B1142323F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */; };
+		F8B1142423F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */; };
+		F8B1142523F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +161,7 @@
 		F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrimeModalViewController.xib; sourceTree = "<group>"; };
 		F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extensions.swift"; sourceTree = "<group>"; };
 		F8B1142123F7DF2F00DA6466 /* PrimeTime.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = PrimeTime.playground; path = ../PrimeTime.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitectureTestSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,7 @@
 			files = (
 				F87E5DC523F7D60B00FEC92D /* ComposableArchitecture.framework in Frameworks */,
 				F8B113F323F7D91800DA6466 /* Counter.framework in Frameworks */,
-				F87E5DAA23F7D4F000FEC92D /* SceneBuilder in Frameworks */,
+				F87E5DAA23F7D4F000FEC92D /* BuildFile in Frameworks */,
 				CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,7 @@
 			children = (
 				F87E5D9723F7D3EC00FEC92D /* RxPrimeTimeTests.swift */,
 				F87E5D9923F7D3EC00FEC92D /* Info.plist */,
+				F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */,
 			);
 			path = RxPrimeTimeTests;
 			sourceTree = "<group>";
@@ -394,7 +399,7 @@
 			);
 			name = RxPrimeTime;
 			packageProductDependencies = (
-				F87E5DA923F7D4F000FEC92D /* SceneBuilder */,
+				F87E5DA923F7D4F000FEC92D /* SwiftPackageProductDependency */,
 			);
 			productName = RxPrimeTime;
 			productReference = F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */;
@@ -408,6 +413,7 @@
 				F87E5D8F23F7D3EC00FEC92D /* Sources */,
 				F87E5D9023F7D3EC00FEC92D /* Frameworks */,
 				F87E5D9123F7D3EC00FEC92D /* Resources */,
+				887646ADF62CCD85231D3CD0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -724,6 +730,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTime/Pods-RxPrimeTime-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		887646ADF62CCD85231D3CD0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A1AB023B201EDF103D9D922A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -808,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87E5D9823F7D3EC00FEC92D /* RxPrimeTimeTests.swift in Sources */,
+				F8B1142323F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87E5DC023F7D60B00FEC92D /* ComposableArchitectureTests.swift in Sources */,
+				F8B1142423F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B113EE23F7D91800DA6466 /* CounterTests.swift in Sources */,
+				F8B1142523F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,7 +1396,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F87E5DA923F7D4F000FEC92D /* SceneBuilder */ = {
+		F87E5DA923F7D4F000FEC92D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SceneBuilder;
 		};

@@ -11,6 +11,9 @@ target 'ComposableArchitecture' do
 
   target 'ComposableArchitectureTests' do
     # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    
   end
 
 end
@@ -26,6 +29,9 @@ target 'Counter' do
 
   target 'CounterTests' do
     # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    
   end
 
 end
@@ -42,6 +48,9 @@ target 'RxPrimeTime' do
   target 'RxPrimeTimeTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    
   end
 
 end
