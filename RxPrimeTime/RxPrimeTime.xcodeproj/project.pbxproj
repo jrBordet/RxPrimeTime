@@ -61,6 +61,8 @@
 		F8B1150123F8555D00DA6466 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150023F8555D00DA6466 /* Counter.swift */; };
 		F8B1150323F855A400DA6466 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150223F855A400DA6466 /* CounterViewController.swift */; };
 		F8B1150523F855DC00DA6466 /* CounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1150423F855DC00DA6466 /* CounterViewController.xib */; };
+		F8B1150723F8594E00DA6466 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150623F8594E00DA6466 /* CounterView.swift */; };
+		F8B1150923F859EA00DA6466 /* Counter+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1150823F859EA00DA6466 /* Counter+Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +248,8 @@
 		F8B1150023F8555D00DA6466 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		F8B1150223F855A400DA6466 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		F8B1150423F855DC00DA6466 /* CounterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CounterViewController.xib; sourceTree = "<group>"; };
+		F8B1150623F8594E00DA6466 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		F8B1150823F859EA00DA6466 /* Counter+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+Environment.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,9 +457,9 @@
 		F8B113DF23F7D91700DA6466 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
-				F8B1150023F8555D00DA6466 /* Counter.swift */,
-				F8B1150223F855A400DA6466 /* CounterViewController.swift */,
-				F8B1150423F855DC00DA6466 /* CounterViewController.xib */,
+				F8B1150823F859EA00DA6466 /* Counter+Environment.swift */,
+				F8B1150623F8594E00DA6466 /* CounterView.swift */,
+				F8B1150A23F85AAD00DA6466 /* Counter */,
 				F8B1141623F7DD1600DA6466 /* PrimeModal */,
 				F8B113E023F7D91700DA6466 /* Counter.h */,
 				F8B113E123F7D91700DA6466 /* Info.plist */,
@@ -531,6 +535,16 @@
 				F8B114F823F854E400DA6466 /* Requests+.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		F8B1150A23F85AAD00DA6466 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1150023F8555D00DA6466 /* Counter.swift */,
+				F8B1150223F855A400DA6466 /* CounterViewController.swift */,
+				F8B1150423F855DC00DA6466 /* CounterViewController.xib */,
+			);
+			path = Counter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1178,7 +1192,9 @@
 				F8B1150123F8555D00DA6466 /* Counter.swift in Sources */,
 				F8B1141A23F7DD6600DA6466 /* PrimeModalViewController.swift in Sources */,
 				F8B1141F23F7DE2A00DA6466 /* Rx+extensions.swift in Sources */,
+				F8B1150923F859EA00DA6466 /* Counter+Environment.swift in Sources */,
 				F8B1141823F7DD2200DA6466 /* PrimeModal.swift in Sources */,
+				F8B1150723F8594E00DA6466 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
