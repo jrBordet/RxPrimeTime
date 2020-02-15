@@ -1,15 +1,14 @@
 //
-//  SceneBuilderTests.swift
-//  SceneBuilderTests
+//  FaketTests.swift
+//  RxPrimeTimeTests
 //
 //  Created by Jean Raphael Bordet on 15/02/2020.
 //  Copyright © 2020 Bordet. All rights reserved.
 //
 
 import XCTest
-@testable import SceneBuilder
 
-class SceneBuilderTests: XCTestCase {
+class FaketTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,6 +21,7 @@ class SceneBuilderTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(true)
     }
 
     func testPerformanceExample() {

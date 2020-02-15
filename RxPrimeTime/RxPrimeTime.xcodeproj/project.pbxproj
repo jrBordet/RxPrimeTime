@@ -46,12 +46,9 @@
 		F8B114BF23F7ED3F00DA6466 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B114AF23F7ED3F00DA6466 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B114C223F7ED3F00DA6466 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B114AD23F7ED3F00DA6466 /* Networking.framework */; };
 		F8B114C323F7ED3F00DA6466 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B114AD23F7ED3F00DA6466 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F8B114D823F7EDC800DA6466 /* SceneBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */; };
 		F8B114E123F7EDC800DA6466 /* SceneBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B114D123F7EDC800DA6466 /* SceneBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8B114E423F7EDC800DA6466 /* SceneBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */; };
 		F8B114E523F7EDC800DA6466 /* SceneBuilder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F8B114EF23F8540800DA6466 /* SceneBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114ED23F8540800DA6466 /* SceneBuilderTests.swift */; };
-		F8B114F023F8540800DA6466 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B114EE23F8540800DA6466 /* Info.plist */; };
 		F8B114F223F8543300DA6466 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F123F8543300DA6466 /* SceneBuilder.swift */; };
 		F8B114FA23F854E400DA6466 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F323F854E400DA6466 /* Networking.swift */; };
 		F8B114FB23F854E400DA6466 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B114F423F854E400DA6466 /* APIRequest.swift */; };
@@ -77,6 +74,7 @@
 		F8B1153B23F8739700DA6466 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153A23F8739700DA6466 /* AppReducer.swift */; };
 		F8B1153E23F874CC00DA6466 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153D23F874CC00DA6466 /* AppState.swift */; };
 		F8B1154023F874DA00DA6466 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153F23F874DA00DA6466 /* AppAction.swift */; };
+		F8B1154423F8840A00DA6466 /* FaketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1154323F8840A00DA6466 /* FaketTests.swift */; };
 		FB2EB6BDDCBEA4D2D63AA95C /* Pods_FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,20 +148,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = F8B114AC23F7ED3F00DA6466;
 			remoteInfo = Networking;
-		};
-		F8B114D923F7EDC800DA6466 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8B114CE23F7EDC800DA6466;
-			remoteInfo = SceneBuilder;
-		};
-		F8B114DB23F7EDC800DA6466 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F87E5D7523F7D3EA00FEC92D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F87E5D7C23F7D3EA00FEC92D;
-			remoteInfo = RxPrimeTime;
 		};
 		F8B114E223F7EDC800DA6466 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -278,9 +262,6 @@
 		F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SceneBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B114D123F7EDC800DA6466 /* SceneBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneBuilder.h; sourceTree = "<group>"; };
 		F8B114D223F7EDC800DA6466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8B114D723F7EDC800DA6466 /* SceneBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SceneBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B114ED23F8540800DA6466 /* SceneBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneBuilderTests.swift; sourceTree = "<group>"; };
-		F8B114EE23F8540800DA6466 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B114F123F8543300DA6466 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		F8B114F323F854E400DA6466 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F8B114F423F854E400DA6466 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -307,6 +288,7 @@
 		F8B1153A23F8739700DA6466 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		F8B1153D23F874CC00DA6466 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F8B1153F23F874DA00DA6466 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		F8B1154323F8840A00DA6466 /* FaketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaketTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,14 +369,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8B114D423F7EDC800DA6466 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8B114D823F7EDC800DA6466 /* SceneBuilder.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8B1150F23F86D3500DA6466 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,7 +425,6 @@
 				F8B114AE23F7ED3F00DA6466 /* Networking */,
 				F8B114BB23F7ED3F00DA6466 /* NetworkingTests */,
 				F8B114D023F7EDC800DA6466 /* SceneBuilder */,
-				F8B114EC23F8540800DA6466 /* SceneBuilderTests */,
 				F8B1151323F86D3500DA6466 /* FavoritePrimes */,
 				F8B1152023F86D3500DA6466 /* FavoritePrimesTests */,
 				F87E5D7E23F7D3EA00FEC92D /* Products */,
@@ -472,7 +445,6 @@
 				F8B114AD23F7ED3F00DA6466 /* Networking.framework */,
 				F8B114B523F7ED3F00DA6466 /* NetworkingTests.xctest */,
 				F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */,
-				F8B114D723F7EDC800DA6466 /* SceneBuilderTests.xctest */,
 				F8B1151223F86D3500DA6466 /* FavoritePrimes.framework */,
 				F8B1151A23F86D3500DA6466 /* FavoritePrimesTests.xctest */,
 			);
@@ -499,6 +471,7 @@
 				F8B1142223F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift */,
 				F87E5D9723F7D3EC00FEC92D /* RxPrimeTimeTests.swift */,
 				F87E5D9923F7D3EC00FEC92D /* Info.plist */,
+				F8B1154323F8840A00DA6466 /* FaketTests.swift */,
 			);
 			path = RxPrimeTimeTests;
 			sourceTree = "<group>";
@@ -603,15 +576,6 @@
 				F8B114F123F8543300DA6466 /* SceneBuilder.swift */,
 			);
 			path = SceneBuilder;
-			sourceTree = "<group>";
-		};
-		F8B114EC23F8540800DA6466 /* SceneBuilderTests */ = {
-			isa = PBXGroup;
-			children = (
-				F8B114ED23F8540800DA6466 /* SceneBuilderTests.swift */,
-				F8B114EE23F8540800DA6466 /* Info.plist */,
-			);
-			path = SceneBuilderTests;
 			sourceTree = "<group>";
 		};
 		F8B114F723F854E400DA6466 /* Requests */ = {
@@ -769,7 +733,6 @@
 				F87E5D8F23F7D3EC00FEC92D /* Sources */,
 				F87E5D9023F7D3EC00FEC92D /* Frameworks */,
 				F87E5D9123F7D3EC00FEC92D /* Resources */,
-				887646ADF62CCD85231D3CD0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -916,25 +879,6 @@
 			productReference = F8B114CF23F7EDC800DA6466 /* SceneBuilder.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F8B114D623F7EDC800DA6466 /* SceneBuilderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8B114E923F7EDC800DA6466 /* Build configuration list for PBXNativeTarget "SceneBuilderTests" */;
-			buildPhases = (
-				F8B114D323F7EDC800DA6466 /* Sources */,
-				F8B114D423F7EDC800DA6466 /* Frameworks */,
-				F8B114D523F7EDC800DA6466 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F8B114DA23F7EDC800DA6466 /* PBXTargetDependency */,
-				F8B114DC23F7EDC800DA6466 /* PBXTargetDependency */,
-			);
-			name = SceneBuilderTests;
-			productName = SceneBuilderTests;
-			productReference = F8B114D723F7EDC800DA6466 /* SceneBuilderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		F8B1151123F86D3500DA6466 /* FavoritePrimes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8B1152923F86D3500DA6466 /* Build configuration list for PBXNativeTarget "FavoritePrimes" */;
@@ -1020,10 +964,6 @@
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
 					};
-					F8B114D623F7EDC800DA6466 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = F87E5D7C23F7D3EA00FEC92D;
-					};
 					F8B1151123F86D3500DA6466 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -1056,7 +996,6 @@
 				F8B114AC23F7ED3F00DA6466 /* Networking */,
 				F8B114B423F7ED3F00DA6466 /* NetworkingTests */,
 				F8B114CE23F7EDC800DA6466 /* SceneBuilder */,
-				F8B114D623F7EDC800DA6466 /* SceneBuilderTests */,
 				F8B1151123F86D3500DA6466 /* FavoritePrimes */,
 				F8B1151923F86D3500DA6466 /* FavoritePrimesTests */,
 			);
@@ -1129,14 +1068,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8B114D523F7EDC800DA6466 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8B114F023F8540800DA6466 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1314,23 +1245,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		887646ADF62CCD85231D3CD0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A1AB023B201EDF103D9D922A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1440,6 +1354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87E5D9823F7D3EC00FEC92D /* RxPrimeTimeTests.swift in Sources */,
+				F8B1154423F8840A00DA6466 /* FaketTests.swift in Sources */,
 				F8B1142323F7E70D00DA6466 /* ComposableArchitectureTestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1515,14 +1430,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8B114D323F7EDC800DA6466 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8B114EF23F8540800DA6466 /* SceneBuilderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8B1150E23F86D3500DA6466 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1594,16 +1501,6 @@
 			isa = PBXTargetDependency;
 			target = F8B114AC23F7ED3F00DA6466 /* Networking */;
 			targetProxy = F8B114C023F7ED3F00DA6466 /* PBXContainerItemProxy */;
-		};
-		F8B114DA23F7EDC800DA6466 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8B114CE23F7EDC800DA6466 /* SceneBuilder */;
-			targetProxy = F8B114D923F7EDC800DA6466 /* PBXContainerItemProxy */;
-		};
-		F8B114DC23F7EDC800DA6466 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F87E5D7C23F7D3EA00FEC92D /* RxPrimeTime */;
-			targetProxy = F8B114DB23F7EDC800DA6466 /* PBXContainerItemProxy */;
 		};
 		F8B114E323F7EDC800DA6466 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2201,48 +2098,6 @@
 			};
 			name = Release;
 		};
-		F8B114EA23F7EDC800DA6466 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP6P798NUV;
-				INFOPLIST_FILE = SceneBuilderTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.SceneBuilderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
-			};
-			name = Debug;
-		};
-		F8B114EB23F7EDC800DA6466 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP6P798NUV;
-				INFOPLIST_FILE = SceneBuilderTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jrbordet.SceneBuilderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxPrimeTime.app/RxPrimeTime";
-			};
-			name = Release;
-		};
 		F8B1152A23F86D3500DA6466 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CB0212D371B08FF4E83FD3F /* Pods-FavoritePrimes.debug.xcconfig */;
@@ -2437,15 +2292,6 @@
 			buildConfigurations = (
 				F8B114E723F7EDC800DA6466 /* Debug */,
 				F8B114E823F7EDC800DA6466 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8B114E923F7EDC800DA6466 /* Build configuration list for PBXNativeTarget "SceneBuilderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8B114EA23F7EDC800DA6466 /* Debug */,
-				F8B114EB23F7EDC800DA6466 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
