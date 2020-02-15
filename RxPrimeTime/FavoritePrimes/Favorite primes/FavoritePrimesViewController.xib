@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritePrimesViewController" customModule="PrimeTime" customModuleProvider="target">
+            <connections>
+                <outlet property="loadButton" destination="eo8-4k-CKc" id="Sne-de-l0L"/>
+                <outlet property="saveButton" destination="Nph-WI-omL" id="cLC-2u-nlK"/>
+                <outlet property="tableView" destination="HoA-8x-o03" id="jEW-Fp-4Xy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HoA-8x-o03">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pND-IA-EOA">
+                    <rect key="frame" x="264" y="782" width="134" height="64"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-WI-omL">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="9CU-8E-700"/>
+                                <constraint firstAttribute="width" constant="64" id="rc7-sq-NPT"/>
+                            </constraints>
+                            <state key="normal" title="save"/>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-4k-CKc">
+                            <rect key="frame" x="70" y="0.0" width="64" height="64"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="64" id="SHn-eo-ghH"/>
+                                <constraint firstAttribute="height" constant="64" id="fab-Pf-fZd"/>
+                            </constraints>
+                            <state key="normal" title="load"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pND-IA-EOA" secondAttribute="bottom" constant="16" id="A4N-Vc-JIa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pND-IA-EOA" secondAttribute="trailing" constant="16" id="Cj1-Px-Tr8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HoA-8x-o03" secondAttribute="trailing" id="Rye-8I-wao"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HoA-8x-o03" secondAttribute="bottom" id="TMO-vh-o6k"/>
+                <constraint firstItem="HoA-8x-o03" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZaO-J8-HR1"/>
+                <constraint firstItem="HoA-8x-o03" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eiF-Uc-BkP"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="141" y="157"/>
+        </view>
+    </objects>
+</document>

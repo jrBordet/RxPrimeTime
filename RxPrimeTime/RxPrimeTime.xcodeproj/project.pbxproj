@@ -72,6 +72,8 @@
 		F8B1153023F86D6700DA6466 /* FavoritePrimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */; };
 		F8B1153223F86E3C00DA6466 /* Favorite+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */; };
 		F8B1153423F86F1C00DA6466 /* FileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153323F86F1C00DA6466 /* FileClient.swift */; };
+		F8B1153623F8704000DA6466 /* FavoritePrimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1153523F8704000DA6466 /* FavoritePrimesViewController.swift */; };
+		F8B1153823F870A300DA6466 /* FavoritePrimesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B1153723F870A300DA6466 /* FavoritePrimesViewController.xib */; };
 		FB2EB6BDDCBEA4D2D63AA95C /* Pods_FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52350BAAE7446B38CFE07D42 /* Pods_FavoritePrimes.framework */; };
 /* End PBXBuildFile section */
 
@@ -297,6 +299,8 @@
 		F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimes.swift; sourceTree = "<group>"; };
 		F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+Environment.swift"; sourceTree = "<group>"; };
 		F8B1153323F86F1C00DA6466 /* FileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClient.swift; sourceTree = "<group>"; };
+		F8B1153523F8704000DA6466 /* FavoritePrimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimesViewController.swift; sourceTree = "<group>"; };
+		F8B1153723F870A300DA6466 /* FavoritePrimesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritePrimesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,6 +631,7 @@
 			children = (
 				F8B1153123F86E3C00DA6466 /* Favorite+Environment.swift */,
 				F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */,
+				F8B1153923F870AB00DA6466 /* Favorite primes */,
 				F8B1153323F86F1C00DA6466 /* FileClient.swift */,
 				F8B1151423F86D3500DA6466 /* FavoritePrimes.h */,
 				F8B1151523F86D3500DA6466 /* Info.plist */,
@@ -641,6 +646,15 @@
 				F8B1152323F86D3500DA6466 /* Info.plist */,
 			);
 			path = FavoritePrimesTests;
+			sourceTree = "<group>";
+		};
+		F8B1153923F870AB00DA6466 /* Favorite primes */ = {
+			isa = PBXGroup;
+			children = (
+				F8B1153523F8704000DA6466 /* FavoritePrimesViewController.swift */,
+				F8B1153723F870A300DA6466 /* FavoritePrimesViewController.xib */,
+			);
+			path = "Favorite primes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1097,6 +1111,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B1153823F870A300DA6466 /* FavoritePrimesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,6 +1491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B1153623F8704000DA6466 /* FavoritePrimesViewController.swift in Sources */,
 				F8B1153023F86D6700DA6466 /* FavoritePrimes.swift in Sources */,
 				F8B1153423F86F1C00DA6466 /* FileClient.swift in Sources */,
 				F8B1153223F86E3C00DA6466 /* Favorite+Environment.swift in Sources */,

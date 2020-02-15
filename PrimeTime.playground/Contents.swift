@@ -4,6 +4,7 @@ import UIKit
 import PlaygroundSupport
 import Counter
 import ComposableArchitecture
+import FavoritePrimes
 
 let primeModalScene = Scene<PrimeModalViewController>().render()
 
@@ -17,5 +18,9 @@ counterScene.store = Store<CounterViewState, CounterViewAction>(initialValue: Co
                                                                                                alertNthPrime: nil),
                                                                 reducer: counterViewReducer)
 
+let favoritePrimesScene = Scene<FavoritePrimesViewController>().render()
+
+favoritePrimesScene.store = Store(initialValue: [2, 3, 5], reducer: favoritePrimesReducer(state:action:))
+
 // Present the view controller in the Live View window
-PlaygroundPage.current.liveView = counterScene
+PlaygroundPage.current.liveView = favoritePrimesScene
