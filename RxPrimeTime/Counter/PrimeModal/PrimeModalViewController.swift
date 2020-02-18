@@ -16,6 +16,7 @@ public class PrimeModalViewController: UIViewController {
     @IBOutlet var actionsContainer: UIStackView!
     @IBOutlet var removeFavoriteButton: UIButton!
     @IBOutlet var addFavoriteButton: UIButton!
+    @IBOutlet var dismissButton: UIButton!
     
     public var store: Store<PrimeModalState, PrimeModalAction>?
     
@@ -35,6 +36,12 @@ public class PrimeModalViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 13, *) {
+            dismissButton.isHidden = true
+        } else {
+            dismissButton.isHidden = false
+        }
         
         guard let store = self.store else {
             return
@@ -75,5 +82,9 @@ public class PrimeModalViewController: UIViewController {
         removeFavoriteButton.rx
             .tap.bind { store.send(.removeFavoritePrimeTapped) }
             .disposed(by: disposeBag)
+        
+        dismissButton.rx.tap.bind { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }.disposed(by: disposeBag)
     }
 }

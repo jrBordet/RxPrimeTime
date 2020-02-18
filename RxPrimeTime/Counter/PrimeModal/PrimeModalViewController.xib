@@ -8,11 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrimeModalViewController" customModule="PrimeTime" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrimeModalViewController" customModule="Counter" customModuleProvider="target">
             <connections>
                 <outlet property="actionsContainer" destination="dCx-ol-NYd" id="eqZ-2g-dgF"/>
                 <outlet property="addFavoriteButton" destination="a27-kn-YEF" id="IUe-Uf-vm8"/>
                 <outlet property="countLabel" destination="wR3-JN-MO5" id="uAJ-HY-9ME"/>
+                <outlet property="dismissButton" destination="QKE-Ov-rwP" id="OIa-8H-2gd"/>
                 <outlet property="removeFavoriteButton" destination="yhx-d1-pBH" id="zZM-Da-ZFg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,6 +23,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKE-Ov-rwP">
+                    <rect key="frame" x="347" y="74" width="37" height="30"/>
+                    <state key="normal" title="close"/>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-JN-MO5">
                     <rect key="frame" x="16" y="372" width="382" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -48,7 +53,9 @@
             <constraints>
                 <constraint firstItem="dCx-ol-NYd" firstAttribute="top" secondItem="wR3-JN-MO5" secondAttribute="bottom" constant="8" id="5UG-WM-gcq"/>
                 <constraint firstItem="dCx-ol-NYd" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NbJ-tU-4TZ"/>
+                <constraint firstItem="QKE-Ov-rwP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="RXp-Aa-Oxk"/>
                 <constraint firstItem="wR3-JN-MO5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UKM-zE-o52"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QKE-Ov-rwP" secondAttribute="trailing" constant="30" id="aBq-3n-Y3e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wR3-JN-MO5" secondAttribute="trailing" constant="16" id="jwt-wQ-etb"/>
                 <constraint firstItem="dCx-ol-NYd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uy3-pi-ggA"/>
             </constraints>

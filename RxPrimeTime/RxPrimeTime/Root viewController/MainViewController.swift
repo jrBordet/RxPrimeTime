@@ -17,9 +17,10 @@ import Counter
 import FavoritePrimes
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet var counterViewTap: UIButton!
     @IBOutlet var favoritesPrimesTap: UIButton!
+    @IBOutlet var lastActivityLabel: UILabel!
     
     private let disposeBag = DisposeBag()
     
@@ -50,5 +51,12 @@ class MainViewController: UIViewController {
                             vc.store = applicationStore.view(value: { $0.favoritePrimes }, action: { .favoritePrimes($0) })
             })
         }.disposed(by: disposeBag)
+        
+        applicationStore
+            .value
+            .map { $0.activityFeed.last.debugDescription }
+            .asDriver(onErrorJustReturn: "")
+            .drive(lastActivityLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }

@@ -71,7 +71,7 @@ public class CounterViewController: UIViewController {
                            destination: Scene<PrimeModalViewController>(),
                            completion: { vc in
                             vc.store = store.view(value: { ($0.count, $0.favoritePrimes) }, action: { .primeModal($0) })
-            }, isModal: false)
+            }, isModal: true)
             
         }.disposed(by: disposeBag)
         

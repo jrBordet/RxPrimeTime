@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="counterViewTap" destination="QBs-gH-SKt" id="ykG-mo-7j1"/>
                 <outlet property="favoritesPrimesTap" destination="fLC-np-HEA" id="FR6-yB-rxd"/>
+                <outlet property="lastActivityLabel" destination="8h1-tA-SSl" id="SHT-FP-MVA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,11 +36,21 @@
                         </button>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h1-tA-SSl">
+                    <rect key="frame" x="15" y="744" width="384" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8h1-tA-SSl" secondAttribute="trailing" constant="15" id="0lR-yA-rC6"/>
+                <constraint firstItem="8h1-tA-SSl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="1SB-df-BoV"/>
                 <constraint firstItem="zkE-Dt-CdD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="7nI-db-cJc"/>
                 <constraint firstItem="zkE-Dt-CdD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ElP-1F-cgU"/>
+                <constraint firstItem="8h1-tA-SSl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="I83-8b-5Ls"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8h1-tA-SSl" secondAttribute="bottom" constant="100" id="btf-W7-xlb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="145"/>
