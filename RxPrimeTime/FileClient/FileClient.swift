@@ -10,13 +10,21 @@ import Foundation
 import ComposableArchitecture
 import RxSwift
 
-struct FileClient {
-    var load: (String) -> Effect<Data?>
-    var save: (String, Data) -> Effect<Never>
+public struct FileClient {
+    public var load: (String) -> Effect<Data?>
+    public var save: (String, Data) -> Effect<Never>
+    
+    public init(
+        load: @escaping(String) -> Effect<Data?>,
+        save: @escaping(String, Data) -> Effect<Never>
+    ) {
+        self.load = load
+        self.save = save
+    }
 }
 
 extension FileClient {
-    static let live = FileClient(
+    public static let live = FileClient(
         load: { fileName -> Effect<Data?> in
             .create { observer in
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]

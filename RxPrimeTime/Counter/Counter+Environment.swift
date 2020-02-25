@@ -12,25 +12,31 @@ import RxSwift
 import RxCocoa
 import Networking
 
-struct CounterEnvironment {
-    var nthPrime: (Int) -> Effect<Int?>
-}
+public typealias CounterEnvironment = (Int) -> Effect<Int?>
 
-extension CounterEnvironment {
-    static let live = CounterEnvironment { n in
-        return nthPrimeRequest(with: n)
-    }
-}
+//public struct CounterEnvironment {
+//    var nthPrime: (Int) -> Effect<Int?>
+//
+//    public init(nthPrime: @escaping(Int) -> Effect<Int?>) {
+//        self.nthPrime = nthPrime
+//    }
+//}
 
-extension CounterEnvironment {
-    static let mock = CounterEnvironment { n in
-        return Effect.sync { 3 }
-    }
-}
+//extension CounterEnvironment {
+//    static let live = CounterEnvironment { n in
+//        return nthPrimeRequest(with: n)
+//    }
+//}
+//
+//extension CounterEnvironment {
+//    static let mock = CounterEnvironment { n in
+//        return Effect.sync { 3 }
+//    }
+//}
+//
+//var CurrentCounterEnvironment: CounterEnvironment = .live
 
-var CurrentCounterEnvironment: CounterEnvironment = .live
-
-private func nthPrimeRequest(with n: Int) -> Effect<Int?> {
+public func nthPrimeRequest(with n: Int) -> Effect<Int?> {
     .create { observer -> Disposable in
         _ = performAPI(request: WolframAlphaRequest(query: "prime \(n)"), retry: nil, completion: { result in
             switch result {

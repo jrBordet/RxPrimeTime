@@ -5,6 +5,8 @@ import PlaygroundSupport
 import Counter
 import ComposableArchitecture
 import FavoritePrimes
+import RxSwift
+import RxCocoa
 
 let counterScene = Scene<CounterViewController>().render()
 
@@ -15,9 +17,15 @@ let state = CounterViewState(
     alertNthPrime: nil
 )
 
-counterScene.store = Store<CounterViewState, CounterViewAction>(initialValue: state, reducer: counterViewReducer)
+counterScene.store = Store<CounterViewState, CounterViewAction>(
+    initialValue: state,
+    reducer: counterViewReducer,
+    environment: { _ in  return Effect.sync { 3 } }
+)
 
 let nvc = UINavigationController(rootViewController: counterScene)
 
 PlaygroundPage.current.liveView = nvc
+
+
 

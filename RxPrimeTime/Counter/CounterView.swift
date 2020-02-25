@@ -9,9 +9,21 @@
 import Foundation
 import ComposableArchitecture
 
-public let counterViewReducer = combine(
-    pullback(counterReducer, value: \CounterViewState.counter, action: \CounterViewAction.counter),
-    pullback(primeModalReducer, value: \CounterViewState.primeModal, action: \CounterViewAction.primeModal)
+import FileClient
+
+public let counterViewReducer: Reducer<CounterViewState, CounterViewAction, CounterEnvironment> = combine(
+    pullback(
+        counterReducer,
+        value: \CounterViewState.counter,
+        action: \CounterViewAction.counter,
+        environment: { $0 }
+    ),
+    pullback(
+        primeModalReducer,
+        value: \CounterViewState.primeModal,
+        action: \CounterViewAction.primeModal,
+        environment: { _ in () }
+    )
 )
 
 public struct CounterViewState: Equatable {
@@ -33,8 +45,12 @@ public struct CounterViewState: Equatable {
     }
     
     var counter: CounterState {
-        get { (self.count, self.isLoading, self.alertNthPrime) }
-        set { (self.count, self.isLoading, self.alertNthPrime) = newValue }
+        get {
+            (count: self.count, isLoading: self.isLoading, alertNthPrime: self.alertNthPrime)
+        }
+        set {
+            (count: self.count, isLoading: self.isLoading, alertNthPrime: self.alertNthPrime) = newValue
+        }
     }
     
     var primeModal: PrimeModalState {

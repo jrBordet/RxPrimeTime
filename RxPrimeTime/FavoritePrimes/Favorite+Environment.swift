@@ -8,37 +8,41 @@
 
 import Foundation
 import RxSwift
+import FileClient
+import ComposableArchitecture
 
-struct FavoritePrimesEnvironment {
-    var fileClient: FileClient
-}
 
-extension FavoritePrimesEnvironment {
-    static let live = FavoritePrimesEnvironment(fileClient: .live)
-}
 
-#if DEBUG
-extension FavoritePrimesEnvironment {
-    static let mock = FavoritePrimesEnvironment(
-        fileClient: FileClient(
-            load: { path in
-                .create { observer in
-                    
-                    observer.onNext(try! JSONEncoder().encode([2, 31])) // Array(1...100)
-                    observer.onCompleted()
-                    
-                    return Disposables.create()
-                }
-        }, save: { path, data in
-            .create { observer in
-                
-                observer.onCompleted()
-                
-                return Disposables.create()
-            }
-        })
-    )
-}
-#endif
-
-var CurrentFavoritePrimesEnvironment = FavoritePrimesEnvironment.live
+//struct FavoritePrimesEnvironment {
+//    var fileClient: FileClient
+//}
+//
+//extension FavoritePrimesEnvironment {
+//    static let live = FavoritePrimesEnvironment(fileClient: .live)
+//}
+//
+//#if DEBUG
+//extension FavoritePrimesEnvironment {
+//    static let mock = FavoritePrimesEnvironment(
+//        fileClient: FileClient(
+//            load: { path in
+//                .create { observer in
+//                    
+//                    observer.onNext(try! JSONEncoder().encode([2, 31])) // Array(1...100)
+//                    observer.onCompleted()
+//                    
+//                    return Disposables.create()
+//                }
+//        }, save: { path, data in
+//            .create { observer in
+//                
+//                observer.onCompleted()
+//                
+//                return Disposables.create()
+//            }
+//        })
+//    )
+//}
+//#endif
+//
+//var CurrentFavoritePrimesEnvironment = FavoritePrimesEnvironment.live

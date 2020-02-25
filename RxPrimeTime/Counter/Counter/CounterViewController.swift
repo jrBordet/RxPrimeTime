@@ -47,9 +47,19 @@ public class CounterViewController: UIViewController {
         
         store
             .value
+            .debug("[\(self.debugDescription)]", trimOutput: false)
             .map { $0.isLoading }
+            //.debug("[\(self.debugDescription)]", trimOutput: false)
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(SwiftSpinner.shared.rx_visible)
+            .disposed(by: disposeBag)
+        
+        store
+            .value
+            .map { $0.isLoading == false}
+            .asDriver(onErrorJustReturn: false)
+            .drive(isNthPrimeButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
         store

@@ -14,18 +14,34 @@ import FavoritePrimes
 struct AppState {
     var count: Int
     var favoritePrimes: FavoritePrimesState
-    var activityFeed: [Activity] = []
     var isLoading: Bool
+    var activityFeed: [Activity] = []
     var alertNthPrime: PrimeAlert? = nil
     
-    struct Activity {
-      let timestamp: Date
-      let type: ActivityType
+    struct Activity: CustomDebugStringConvertible {
+        var debugDescription: String {
+            switch type {
+            case let .addedFavoritePrime(value):
+                return "\(self.timestamp.debugDescription) added \(value)"
+            case let .removedFavoritePrime(value):
+                return "\(self.timestamp.debugDescription) removed \(value)"
+            }
+        }
+        
+        let timestamp: Date
+        let type: ActivityType
+        
+        enum ActivityType {
+            case addedFavoritePrime(Int)
+            case removedFavoritePrime(Int)
+        }
+    }
+}
 
-      enum ActivityType {
-        case addedFavoritePrime(Int)
-        case removedFavoritePrime(Int)
-      }
+extension AppState: Equatable {
+    static func == (lhs: AppState, rhs: AppState) -> Bool {
+        lhs.count == rhs.count
+            && lhs.isLoading == rhs.isLoading
     }
 }
 

@@ -11,6 +11,13 @@ import ComposableArchitecture
 import Networking
 import RxSwift
 
+public typealias CounterState = (count: Int, isLoading: Bool, alertNthPrime: PrimeAlert?)
+
+public struct PrimeAlert: Equatable, Identifiable {
+  let prime: Int
+  public var id: Int { self.prime }
+}
+
 public enum CounterAction: Equatable {
     case decrTapped
     case incrTapped
@@ -19,14 +26,11 @@ public enum CounterAction: Equatable {
     case alertDismissButtonTapped
 }
 
-public typealias CounterState = (count: Int, isLoading: Bool, alertNthPrime: PrimeAlert?)
-
-public struct PrimeAlert: Equatable, Identifiable {
-  let prime: Int
-  public var id: Int { self.prime }
-}
-
-public func counterReducer(state: inout CounterState, action: CounterAction) -> [Effect<CounterAction>] {
+public func counterReducer(
+    state: inout CounterState,
+    action: CounterAction,
+    environment: CounterEnvironment
+) -> [Effect<CounterAction>] {
     switch action {
     case .decrTapped:
         state.count -= 1
@@ -36,10 +40,9 @@ public func counterReducer(state: inout CounterState, action: CounterAction) -> 
         return []
     case .nthPrimeButtonTapped:
         state.isLoading = true
+
         return [
-            CurrentCounterEnvironment
-                .nthPrime(state.count)
-                .map(CounterAction.nthPrimeResponse)
+            environment(state.count).map(CounterAction.nthPrimeResponse)
         ]
     case let .nthPrimeResponse(prime):
         state.isLoading = false

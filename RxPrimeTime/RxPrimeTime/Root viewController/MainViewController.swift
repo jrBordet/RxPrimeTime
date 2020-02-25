@@ -35,8 +35,10 @@ class MainViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<CounterViewController>(),
                            completion: { vc in
-                            
-                            vc.store = applicationStore.view(value: { $0.counterView }, action: { .counterView($0) })
+                            vc.store = applicationStore.view(
+                                value: { $0.counterView },
+                                action: { .counterView($0) }
+                            )
             })
         }.disposed(by: disposeBag)
         
@@ -48,15 +50,24 @@ class MainViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<FavoritePrimesViewController>(),
                            completion: { vc in
-                            vc.store = applicationStore.view(value: { $0.favoritePrimes }, action: { .favoritePrimes($0) })
+                            vc.store = applicationStore.view(
+                                value: { $0.favoritePrimes },
+                                action: { .favoritePrimes($0) }
+                            )
             })
         }.disposed(by: disposeBag)
         
         applicationStore
             .value
-            .map { $0.activityFeed.last.debugDescription }
-            .asDriver(onErrorJustReturn: "")
-            .drive(lastActivityLabel.rx.text)
-            .disposed(by: disposeBag)
+            .map { (appState: AppState) -> String in
+                guard let last = appState.activityFeed.last else {
+                    return ""
+                }
+                
+                return last.debugDescription
+        }
+        .asDriver(onErrorJustReturn: "")
+        .drive(lastActivityLabel.rx.text)
+        .disposed(by: disposeBag)
     }
 }

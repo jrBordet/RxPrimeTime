@@ -12,23 +12,41 @@ import RxCocoa
 
 public typealias Effect<A> = Observable<A>
 
-public typealias Reducer<Value, Action> = (inout Value, Action) -> [Effect<Action>]
+/**
+ public typealias Reducer<Value, Action, Environment> = (inout Value, Action, Environment) -> [Effect<Action>]
+ */
+// public typealias Reducer<Value, Action> = (inout Value, Action) -> [Effect<Action>]
+
+public typealias Reducer<Value, Action, Environment> = (inout Value, Action, Environment) -> [Effect<Action>]
 
 public final class Store<Value, Action> {
-    private let reducer: Reducer<Value, Action>
+    private let reducer: Reducer<Value, Action, Any>
     
     public private(set) var value: BehaviorRelay<Value>
     
+    private let environment: Any
+    
     private let disposeBag = DisposeBag()
     
-    public init(initialValue: Value, reducer: @escaping Reducer<Value, Action>) {
-        self.reducer = reducer
+    public init<Environment>(
+        initialValue: Value,
+        reducer: @escaping Reducer<Value, Action, Environment>,
+        environment: Environment
+    ) {
+        //self.reducer = reducer
+        
+        self.reducer = { value, action, environment in
+          reducer(&value, action, environment as! Environment)
+        }
+        
         self.value = BehaviorRelay<Value>(value: initialValue)
+        
+        self.environment = environment
     }
     
     public func send(_ action: Action) {
         var valueCopy = self.value.value
-        let effects = self.reducer(&valueCopy, action)
+        let effects = self.reducer(&valueCopy, action, self.environment)
         
         self.value.accept(valueCopy)
         
@@ -45,11 +63,11 @@ public final class Store<Value, Action> {
     ) -> Store<LocalValue, LocalAction> {
         let localStore = Store<LocalValue, LocalAction>(
             initialValue: toLocalValue(self.value.value),
-            reducer: { localValue, localAction in
+            reducer: { localValue, localAction, _ in
                 self.send(toGlobalAction(localAction))
                 localValue = toLocalValue(self.value.value)
                 return []
-        })
+        }, environment: self.environment)
         
         self.value.subscribe(onNext: { (newValue: Value) in
             localStore.value.accept(toLocalValue(newValue))
@@ -59,12 +77,12 @@ public final class Store<Value, Action> {
     }
 }
 
-public func combine<Value, Action>(
-    _ reducers: Reducer<Value, Action>...
-) -> Reducer<Value, Action> {
-    return { value, action in
+public func combine<Value, Action, Environment>(
+    _ reducers: Reducer<Value, Action, Environment>...
+) -> Reducer<Value, Action, Environment> {
+    return { value, action, environment in
         let effects = reducers.flatMap {
-            $0(&value, action)
+            $0(&value, action, environment)
         }
         
         return effects
@@ -79,12 +97,13 @@ public func combine<Value, Action>(
  
  */
 
-public func pullback<LocalValue, GlobalValue, LocalAction, GlobalAction>(
-    _ reducer: @escaping Reducer<LocalValue, LocalAction>,
+public func pullback<LocalValue, GlobalValue, LocalAction, GlobalAction, LocalEnvironment, GlobalEnvironment>(
+    _ reducer: @escaping Reducer<LocalValue, LocalAction, LocalEnvironment>,
     value: WritableKeyPath<GlobalValue, LocalValue>,
-    action: WritableKeyPath<GlobalAction, LocalAction?>
-) -> Reducer<GlobalValue, GlobalAction> {
-    return { globalValue, globalAction in
+    action: WritableKeyPath<GlobalAction, LocalAction?>,
+    environment: @escaping (GlobalEnvironment) -> LocalEnvironment
+) -> Reducer<GlobalValue, GlobalAction, GlobalEnvironment> {
+    return { globalValue, globalAction, globalEnvironment in
         guard let localAction = globalAction[keyPath: action] else {
             return []
         }
@@ -94,7 +113,7 @@ public func pullback<LocalValue, GlobalValue, LocalAction, GlobalAction>(
         
         // WritableKeyPath<GlobalValue, LocalValue>
         // \User.id as WritableKeyPath<User, Int>
-        let localEffects = reducer(&globalValue[keyPath: value], localAction)
+        let localEffects = reducer(&globalValue[keyPath: value], localAction, environment(globalEnvironment))
         
         return localEffects.map { localEffect in
             localEffect.map { localAction -> GlobalAction in
@@ -106,11 +125,11 @@ public func pullback<LocalValue, GlobalValue, LocalAction, GlobalAction>(
     }
 }
 
-public func logging<Value, Action>(
-    _ reducer: @escaping Reducer<Value, Action>
-) -> Reducer<Value, Action> {
-    return { value, action in
-        let effects = reducer(&value, action)
+public func logging<Value, Action, Environment>(
+    _ reducer: @escaping Reducer<Value, Action, Environment>
+) -> Reducer<Value, Action, Environment> {
+    return { value, action, environment in
+        let effects = reducer(&value, action, environment)
         let newValue = value
         
         return [.fireAndForget {

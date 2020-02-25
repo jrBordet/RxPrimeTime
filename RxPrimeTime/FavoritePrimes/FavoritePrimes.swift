@@ -9,6 +9,9 @@
 import Foundation
 import ComposableArchitecture
 import RxSwift
+import FileClient
+
+public typealias FavoritePrimesState = [Int]
 
 public enum FavoritePrimesAction: Equatable {
     case deleteFavoritePrimes(Int)
@@ -17,23 +20,33 @@ public enum FavoritePrimesAction: Equatable {
     case loadedFavoritePrimes([Int])
 }
 
-public typealias FavoritePrimesState = [Int]
+public typealias FavoritePrimesEnvironment = (
+  fileClient: FileClient,
+  nthPrime: (Int) -> Effect<Int?>
+)
 
-public func favoritePrimesReducer(state: inout FavoritePrimesState, action: FavoritePrimesAction) -> [Effect<FavoritePrimesAction>] {
+public func favoritePrimesReducer(
+    state: inout FavoritePrimesState,
+    action: FavoritePrimesAction,
+    environment: FavoritePrimesEnvironment
+) -> [Effect<FavoritePrimesAction>] {
     switch action {
     case let .deleteFavoritePrimes(index):
         state.remove(at: index)
         return []
     case .saveButtonTapped:
         return [
-            CurrentFavoritePrimesEnvironment.fileClient.save("favorite-primes.json", try! JSONEncoder().encode(state)).map(absurd(_:))
+            environment
+                .fileClient
+                .save("favorite-primes.json", try! JSONEncoder()
+                    .encode(state)).map(absurd(_:))
         ]
     case let .loadedFavoritePrimes(favoritePrimes):
         state = favoritePrimes
         return []
     case .loadButtonTapped:
         return [
-            CurrentFavoritePrimesEnvironment
+            environment
                 .fileClient
                 .load("favorite-primes.json")
                 .map(loadedFavoritePrimes(data:))
