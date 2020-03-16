@@ -15,9 +15,14 @@ public typealias FavoritePrimesState = [Int]
 
 public enum FavoritePrimesAction: Equatable {
     case deleteFavoritePrimes(Int)
+    
     case saveButtonTapped
+    
     case loadButtonTapped
     case loadedFavoritePrimes([Int])
+    
+    case nthPrimeButtonTapped
+    case nthPrimeResponse(Int?)
 }
 
 public typealias FavoritePrimesEnvironment = (
@@ -51,6 +56,14 @@ public func favoritePrimesReducer(
                 .load("favorite-primes.json")
                 .map(loadedFavoritePrimes(data:))
         ]
+    case .nthPrimeButtonTapped:
+        return [
+            environment.nthPrime(state.first!).map(FavoritePrimesAction.nthPrimeResponse)
+            //environment(state.count).map(FavoritePrimesAction.nthPrimeResponse)
+        ]
+    case let .nthPrimeResponse(prime):
+        //state.alertNthPrime = prime.map(PrimeAlert.init(prime:))
+        return []
     }
 }
 

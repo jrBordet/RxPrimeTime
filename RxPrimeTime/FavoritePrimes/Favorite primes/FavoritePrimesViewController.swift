@@ -20,10 +20,10 @@ public class FavoritePrimesViewController: UIViewController {
     }
     
     @IBOutlet var loadButton: UIButton!  {
-           didSet {
-               loadButton.layer.cornerRadius = loadButton.frame.width / 2
-           }
-       }
+        didSet {
+            loadButton.layer.cornerRadius = loadButton.frame.width / 2
+        }
+    }
     
     public var store: Store<FavoritePrimesState, FavoritePrimesAction>?
     
@@ -34,7 +34,16 @@ public class FavoritePrimesViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        //store = Store(initialValue: [2, 3, 5], reducer: favoritePrimesReducer(state:action:))
+        //        let favoritePrimeEnvironment = FavoritePrimesEnvironment(
+        //            fileClient: .live,
+        //            nthPrime: { _ in  return Effect.sync { 5 } }
+        //        )
+        //
+        //        store = Store(
+        //            initialValue: [2, 3, 5],
+        //            reducer: favoritePrimesReducer,
+        //            environment: favoritePrimeEnvironment
+        //        )
         
         guard let store = store else {
             return
@@ -64,6 +73,30 @@ public class FavoritePrimesViewController: UIViewController {
                 store.send(.deleteFavoritePrimes(item))
         }
         .disposed(by: disposeBag)
+        
+        tableView
+            .rx
+            .modelSelected(String?.self)
+            .subscribe(onNext: { [weak self] (model: String?) in
+                guard let self = self else {
+                    return
+                }
+                
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "The  prime is \(model ?? "")",
+                    preferredStyle: .alert
+                )
+                
+                alert.addAction(
+                    UIAlertAction(
+                        title: "Ok",
+                        style: .default,
+                        handler: nil)
+                )
+                
+                self.present(alert, animated: true)
+            }).disposed(by: disposeBag)
         
         loadButton
             .rx

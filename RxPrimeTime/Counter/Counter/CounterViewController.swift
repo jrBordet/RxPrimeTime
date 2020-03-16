@@ -49,7 +49,6 @@ public class CounterViewController: UIViewController {
             .value
             .debug("[\(self.debugDescription)]", trimOutput: false)
             .map { $0.isLoading }
-            //.debug("[\(self.debugDescription)]", trimOutput: false)
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(SwiftSpinner.shared.rx_visible)

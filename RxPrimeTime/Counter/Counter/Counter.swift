@@ -21,8 +21,10 @@ public struct PrimeAlert: Equatable, Identifiable {
 public enum CounterAction: Equatable {
     case decrTapped
     case incrTapped
+    
     case nthPrimeButtonTapped
     case nthPrimeResponse(Int?)
+    
     case alertDismissButtonTapped
 }
 

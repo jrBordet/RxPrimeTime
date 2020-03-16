@@ -20,7 +20,7 @@ let state = CounterViewState(
 counterScene.store = Store<CounterViewState, CounterViewAction>(
     initialValue: state,
     reducer: counterViewReducer,
-    environment: { _ in  return Effect.sync { 3 } }
+    environment: { _ in  return Effect.sync { 5 } }
 )
 
 let nvc = UINavigationController(rootViewController: counterScene)

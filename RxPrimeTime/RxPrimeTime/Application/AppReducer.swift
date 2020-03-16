@@ -74,6 +74,10 @@ func activityFeed(
             break
         case .favoritePrimes(.loadButtonTapped):
             break
+        case .favoritePrimes(.nthPrimeButtonTapped):
+            break
+        case .favoritePrimes(.nthPrimeResponse(_)):
+            break
         }
         
         return reducer(&state, action, environment)

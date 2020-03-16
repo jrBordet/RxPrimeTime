@@ -8,8 +8,12 @@ import FavoritePrimes
 
 let primeModalScene = Scene<PrimeModalViewController>().render()
 
-let state = (count: 2, favoritePrimes: [2, 5, 7])
+let state = (count: 11, favoritePrimes: [2, 5, 7])
 
-primeModalScene.store = Store<PrimeModalState, PrimeModalAction>(initialValue: state, reducer: primeModalReducer(state:action:))
+primeModalScene.store = Store<PrimeModalState, PrimeModalAction>(
+    initialValue: state,
+    reducer: primeModalReducer,
+    environment: Void()
+)
 
 PlaygroundPage.current.liveView = primeModalScene

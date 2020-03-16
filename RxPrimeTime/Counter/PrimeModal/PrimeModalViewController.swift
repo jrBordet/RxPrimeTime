@@ -47,7 +47,12 @@ public class PrimeModalViewController: UIViewController {
             return
         }
         
-        //self.store = Store<PrimeModalState, PrimeModalAction>.init(initialValue: (count: 2, favoritePrimes: [5,7]), reducer: primeModalReducer(state:action:))
+        
+//        self.store = Store<PrimeModalState, PrimeModalAction>(
+//            initialValue: (count: 2, favoritePrimes: [5,7]),
+//            reducer: primeModalReducer,
+//            environment: Void()
+//        )
         
         store
             .value
