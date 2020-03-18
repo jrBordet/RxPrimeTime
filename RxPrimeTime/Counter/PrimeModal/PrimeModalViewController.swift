@@ -34,6 +34,10 @@ public class PrimeModalViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("[deinit] \(self.description)")
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         

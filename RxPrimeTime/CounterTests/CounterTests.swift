@@ -14,7 +14,6 @@ class CounterTests: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        //CurrentCounterEnvironment = .mock
     }
     
     override func tearDown() {
@@ -23,22 +22,29 @@ class CounterTests: XCTestCase {
     
     // MARK: - Counter
     
-    func testErgonomicIncrDecrButtonTapped() {
+    func testIncrDecrButtonTapped() {
         assert(
-            initialValue: CounterViewState(count: 2,
-                                           favoritePrimes: [2, 3],
-                                           isLoading: false,
-                                           alertNthPrime: nil),
+            initialValue: CounterViewState(
+                count: 2,
+                favoritePrimes: [2, 3],
+                isLoading: false,
+                alertNthPrime: nil
+            ),
             reducer: counterViewReducer,
-            environment: { _  in Effect.sync { 3 } },
+            environment: { _ in Effect.sync { 3 } },
             steps:
             Step(.send, .counter(.incrTapped)) { $0.count = 3 },
-            Step(.send, .counter(.decrTapped), { $0.count = 2 }
-            )
+            Step(.send, .counter(.decrTapped), { $0.count = 2 }),
+            Step(.send, .counter(.incrTapped)) { $0.count = 3 },
+            Step(.send, .counter(.incrTapped)) { $0.count = 4 },
+            Step(.send, .counter(.incrTapped)) { $0.count = 5 },
+            Step(.send, .primeModal(.saveFavoritePrimeTapped), { $0.favoritePrimes = [2, 3, 5] }),
+            Step(.send, .counter(.decrTapped)) { $0.count = 4 },
+            Step(.send, .primeModal(.saveFavoritePrimeTapped), { $0.favoritePrimes = [2, 3, 5] })
         )
     }
     
-    func testErgonomicNthPrimeButtonHappyFlow() {
+    func testNthPrimeButtonHappyFlow() {
         let nthPrime: (Int) -> Effect<Int?> = { _ in Effect.sync { 17 } }
         
         assert(
@@ -62,7 +68,7 @@ class CounterTests: XCTestCase {
         )
     }
     
-    func testErgonomicNthPrimeButtonUnhappyFlow() {
+    func testNthPrimeButtonUnhappyFlow() {
         let nthPrime: (Int) -> Effect<Int?> = { _ in Effect.sync { nil } }
         
         assert(
@@ -82,33 +88,4 @@ class CounterTests: XCTestCase {
             }
         )
     }
-    
-    // MARK: Prime modal
-    
-    func testSaveFavoritePrimesTapped() {
-        var state = (count: 2, favoritePrimes: [3, 5])
-        
-        let effects = primeModalReducer(state: &state, action: .saveFavoritePrimeTapped, environment: ())
-        
-        // If prime modal state ever changes, this will fail to compile,
-        // forcing us to make changes to our test.
-        let (count, favoritePrimes) = state
-        
-        XCTAssertEqual(count, 2)
-        XCTAssertEqual(favoritePrimes, [3, 5, 2])
-        XCTAssert(effects.isEmpty)
-    }
-    
-    func testRemoveFavoritePrimeTapped() {
-        var state = (count: 3, favoritePrimes: [3, 5])
-        
-        let effects = primeModalReducer(state: &state, action: .removeFavoritePrimeTapped, environment: ())
-        
-        let (count, favoritePrimes) = state
-        
-        XCTAssertEqual(count, 3)
-        XCTAssertEqual(favoritePrimes, [5])
-        XCTAssert(effects.isEmpty)
-    }
-    
 }

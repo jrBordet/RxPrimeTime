@@ -10,6 +10,7 @@ import XCTest
 import RxSwift
 import RxCocoa
 import ComposableArchitecture
+import FileClient
 @testable import FavoritePrimes
 
 class FavoritePrimesTests: XCTestCase {
@@ -24,12 +25,12 @@ class FavoritePrimesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testErgonomicDeleteAtIndex() {
+    func testDeleteAtIndex() {
         let state: FavoritePrimesState = [2, 3, 5, 7]
         
         let favoritePrimeEnvironment = FavoritePrimesEnvironment(
-            fileClient: .live,
-            nthPrime: { _ in  return Effect.sync { 5 } }
+            fileClient: .mock,
+            nthPrime: { _ in .sync { nil } }
         )
         
         assert(
@@ -37,21 +38,45 @@ class FavoritePrimesTests: XCTestCase {
             reducer: favoritePrimesReducer,
             environment: favoritePrimeEnvironment,
             steps:
-            Step(.send, .deleteFavoritePrimes(0), {
-                $0 = [3, 5, 7]
-            }),
-            Step(.send, .deleteFavoritePrimes(2), {
-                $0 = [3, 5]
-            })
+            Step(.send, .deleteFavoritePrimes(0), { $0 = [3, 5, 7] }),
+            Step(.send, .deleteFavoritePrimes(2), { $0 = [3, 5] }),
+            Step(.send, .deleteFavoritePrimes(10), { $0 = [3, 5] }),
+            Step(.send, .deleteFavoritePrimes(-1), { $0 = [3, 5] })
         )
     }
     
-    func testErgonomicSaveButtonTapped() {
+    func testLoadButtonTapped() {
+        let state: FavoritePrimesState = []
+        
+        let test = FileClient(
+            load: { _ in Effect<Data?>.sync {
+                try! JSONEncoder().encode([2, 31])
+                }
+        },
+            save: { _, _ in .fireAndForget {} }
+        )
+        
+        let favoritePrimeEnvironment = FavoritePrimesEnvironment(
+            fileClient: test,
+            nthPrime: { _ in .sync { 5 } }
+        )
+        
+        assert(
+            initialValue: state,
+            reducer: favoritePrimesReducer,
+            environment: favoritePrimeEnvironment,
+            steps:
+            Step(.send, .loadButtonTapped, { $0 = []}),
+            Step(.receive, .loadedFavoritePrimes([2, 31]), { $0 = [2, 31] })
+        )
+    }
+    
+    func testSaveButtonTapped() {
         let state: FavoritePrimesState = []
         
         let favoritePrimeEnvironment = FavoritePrimesEnvironment(
-            fileClient: .live,
-            nthPrime: { _ in  return Effect.sync { 5 } }
+            fileClient: .mock,
+            nthPrime: { _ in  return .sync { 5 } }
         )
         
         assert(
@@ -59,86 +84,8 @@ class FavoritePrimesTests: XCTestCase {
             reducer: favoritePrimesReducer,
             environment: favoritePrimeEnvironment,
             steps:
-            Step(.send, .loadButtonTapped, {
-               $0 = [2, 3, 5, 7]
-            })
+            Step(.sendSync, .saveButtonTapped, { $0 = [] })
         )
-        
-        /**
-         
-         
-         let nthPrime: (Int) -> Effect<Int?> = { _ in Effect.sync { 17 } }
-         
-         assert(
-             initialValue: CounterViewState(
-                 isLoading: false,
-                 alertNthPrime: nil
-             ),
-             reducer: counterViewReducer,
-             environment: nthPrime,
-             steps:
-             Step(.send, .counter(.nthPrimeButtonTapped)) {
-                 $0.isLoading = true
-             },
-             Step(.receive, .counter(.nthPrimeResponse(17))) {
-                 $0.alertNthPrime = PrimeAlert(prime: 17)
-                 $0.isLoading = false
-             },
-             Step(.send, .counter(.alertDismissButtonTapped)) {
-                 $0.alertNthPrime = nil
-             }
-         )
-         
-         */
-        
-        
-//        assert(
-//            initialValue: state,
-//            reducer: favoritePrimesReducer,
-//            steps:
-//            Step(.send, FavoritePrimesAction.saveButtonTapped) {
-//                $0.count == 4
-//            }
-//        )
-        
-    }
-
-    func testSaveButtonTapped() {
-        var state = [2, 3, 5, 7]
-        
-//        let effects = favoritePrimesReducer(state: &state, action: .saveButtonTapped)
-//
-//        effects[0].subscribe(onNext: { _ in XCTFail() }).disposed(by: disposeBag)
-//
-//        XCTAssertEqual(state, [2, 3, 5, 7])
-//        XCTAssertEqual(effects.count, 1)
-    }
-    
-    func testLoadFavoritePrimesFlow() {
-//        var state = [2, 3, 5, 7]
-//
-//        var effects = favoritePrimesReducer(state: &state, action: .loadButtonTapped)
-//
-//        XCTAssertEqual(state, [2, 3, 5, 7])
-//        XCTAssertEqual(effects.count, 1)
-//
-//        var nextAction: FavoritePrimesAction!
-//        let receivedCompletion = self.expectation(description: "receivedCompletion")
-//
-//        effects[0]
-//            .subscribe(onNext: { (action: FavoritePrimesAction) in
-//                XCTAssertEqual(action, .loadedFavoritePrimes([2, 31]))
-//                nextAction = action
-//            }, onCompleted: {
-//                receivedCompletion.fulfill()
-//            }).disposed(by: disposeBag)
-//
-//        self.wait(for: [receivedCompletion], timeout: 0)
-//
-//        effects = favoritePrimesReducer(state: &state, action: nextAction)
-//
-//        XCTAssertEqual(state, [2, 31])
-//        XCTAssert(effects.isEmpty)
     }
 
 }

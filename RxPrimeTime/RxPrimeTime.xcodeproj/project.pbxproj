@@ -16,6 +16,7 @@
 		B7F974C73B90CC78168DE7F3 /* Pods_FavoritePrimes_FavoritePrimesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D6269044A9EE80C141F3C0 /* Pods_FavoritePrimes_FavoritePrimesTests.framework */; };
 		CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */; };
 		D56D858A42DB7AC3F6655056 /* Pods_FileClient_FileClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E002FB6D7838BD4D0D65C7 /* Pods_FileClient_FileClientTests.framework */; };
+		F85F0C3924215BDE008A8C3C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85F0C3824215BDE008A8C3C /* CoreFoundation.framework */; };
 		F87E5D8123F7D3EA00FEC92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */; };
 		F87E5D8A23F7D3EC00FEC92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */; };
 		F87E5D8D23F7D3EC00FEC92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8B23F7D3EC00FEC92D /* LaunchScreen.storyboard */; };
@@ -255,6 +256,7 @@
 		E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6A5FDF5389E773DC2FE2F2A /* Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85F0C3824215BDE008A8C3C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPrimeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85F0C3924215BDE008A8C3C /* CoreFoundation.framework in Frameworks */,
 				27ADE9D1C19A2BFECF33B5EC /* Pods_ComposableArchitecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +545,7 @@
 		F87E5DA823F7D4F000FEC92D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F85F0C3824215BDE008A8C3C /* CoreFoundation.framework */,
 				A799C7FC5B3968E7C878BCA6 /* Pods_ComposableArchitecture.framework */,
 				D8CB2DEDFACAD85240AA79A4 /* Pods_ComposableArchitecture_ComposableArchitectureTests.framework */,
 				ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */,

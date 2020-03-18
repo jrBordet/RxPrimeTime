@@ -37,6 +37,10 @@ public func favoritePrimesReducer(
 ) -> [Effect<FavoritePrimesAction>] {
     switch action {
     case let .deleteFavoritePrimes(index):
+        guard 0...state.count - 1 ~= index else {
+            return []
+        }
+        
         state.remove(at: index)
         return []
     case .saveButtonTapped:
@@ -44,7 +48,8 @@ public func favoritePrimesReducer(
             environment
                 .fileClient
                 .save("favorite-primes.json", try! JSONEncoder()
-                    .encode(state)).map(absurd(_:))
+                    .encode(state))
+                .map(absurd(_:))
         ]
     case let .loadedFavoritePrimes(favoritePrimes):
         state = favoritePrimes
@@ -58,8 +63,8 @@ public func favoritePrimesReducer(
         ]
     case .nthPrimeButtonTapped:
         return [
-            environment.nthPrime(state.first!).map(FavoritePrimesAction.nthPrimeResponse)
-            //environment(state.count).map(FavoritePrimesAction.nthPrimeResponse)
+            environment
+                .nthPrime(state.first!).map(FavoritePrimesAction.nthPrimeResponse)
         ]
     case let .nthPrimeResponse(prime):
         //state.alertNthPrime = prime.map(PrimeAlert.init(prime:))

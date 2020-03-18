@@ -11,6 +11,7 @@ import SceneBuilder
 import ComposableArchitecture
 import Counter
 import FavoritePrimes
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = .white
+        
+        #if DEBUG
+        
+        _ = Observable<Int>
+            .interval(1, scheduler: MainScheduler.instance)
+            .map { _ in Int(RxSwift.Resources.total) }
+            .distinctUntilChanged()
+            .subscribe(onNext: { _ in
+                print("[Resource] count \(RxSwift.Resources.total)")
+            })
+        
+        #endif
         
         return true
     }

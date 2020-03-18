@@ -29,6 +29,10 @@ public class FavoritePrimesViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    deinit {
+        print("[deinit] \(self.description)")
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         

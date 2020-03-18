@@ -49,4 +49,12 @@ extension FileClient {
             }
     }
     )
+    
+    public static let mock = FileClient(
+        load: { _ in Effect<Data?>.sync {
+            try! JSONEncoder().encode([2, 31])
+            }
+    },
+        save: { _, _ in .fireAndForget {} }
+    )
 }

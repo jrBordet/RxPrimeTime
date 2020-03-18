@@ -28,6 +28,10 @@ public class CounterViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    deinit {
+        print("[deinit] \(self.description)")
+    }
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -47,7 +51,6 @@ public class CounterViewController: UIViewController {
         
         store
             .value
-            .debug("[\(self.debugDescription)]", trimOutput: false)
             .map { $0.isLoading }
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
@@ -75,7 +78,11 @@ public class CounterViewController: UIViewController {
             store.send(.counter(.incrTapped))
         }.disposed(by: disposeBag)
         
-        isPrimeModalShown.rx.tap.bind {
+        isPrimeModalShown.rx.tap.bind { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
             navigationLink(from: self,
                            destination: Scene<PrimeModalViewController>(),
                            completion: { vc in

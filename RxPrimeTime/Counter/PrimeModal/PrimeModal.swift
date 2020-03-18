@@ -23,9 +23,17 @@ public func primeModalReducer(
 ) -> [Effect<PrimeModalAction>] {
     switch action {
     case .saveFavoritePrimeTapped:
+        guard isPrime(state.count) else {
+            return []
+        }
+        
         state.favoritePrimes.append(state.count)
         return []
     case .removeFavoritePrimeTapped:
+        guard 0...state.count - 1 ~= state.count else {
+            return []
+        }
+        
         state.favoritePrimes.removeAll(where: { $0 == state.count })
         return []
     }

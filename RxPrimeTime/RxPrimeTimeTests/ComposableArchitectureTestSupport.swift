@@ -12,6 +12,7 @@ import XCTest
 
 enum StepType {
     case send
+    case sendSync
     case receive
 }
 
@@ -54,13 +55,13 @@ func assert<Value: Equatable, Action: Equatable, Environment>(
         
         switch step.type {
         case .send:
-            if !effects.isEmpty {
+            if effects.isEmpty == false {
                 XCTFail("Action sent before handling \(effects.count) pending effect(s)", file: step.file, line: step.line)
             }
             effects.append(contentsOf: reducer(&state, step.action, environment))
             
         case .receive:
-            guard !effects.isEmpty else {
+            guard effects.isEmpty == false else {
                 XCTFail("No pending effects to receive from", file: step.file, line: step.line)
                 break
             }
@@ -77,18 +78,25 @@ func assert<Value: Equatable, Action: Equatable, Environment>(
                 })
                 .disposed(by: disposeBag)
             
-            if XCTWaiter.wait(for: [receivedCompletion], timeout: 0.01) != .completed {
+            if XCTWaiter.wait(for: [receivedCompletion], timeout: 1) != .completed {
                 XCTFail("Timed out waiting for the effect to complete", file: step.file, line: step.line)
             }
             
             XCTAssertEqual(action, step.action, file: step.file, line: step.line)
             effects.append(contentsOf: reducer(&state, action, environment))
+        case .sendSync:
+            if effects.isEmpty == false {
+                XCTFail("Action sent before handling \(effects.count) pending effect(s)", file: step.file, line: step.line)
+            }
+            
+            effects = []
         }
         
         step.update(&expected)
         XCTAssertEqual(state, expected, file: step.file, line: step.line)
     }
-    if !effects.isEmpty {
+    
+    if effects.isEmpty == false {
         XCTFail("Assertion failed to handle \(effects.count) pending effect(s)", file: file, line: line)
     }
 }
