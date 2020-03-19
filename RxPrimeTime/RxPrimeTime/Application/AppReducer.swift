@@ -36,20 +36,23 @@ let appReducer: Reducer<AppState, AppAction, AppEnvironment> = combine(
         environment: { $0.nthPrime }
     ),
     pullback(
-        favoritePrimesReducer,
-        value: \AppState.favoritePrimes,
-        action: \AppAction.favoritePrimes,
+        favoritePrimesViewReducer,
+        value: \AppState.favoritesView,
+        action: \AppAction.favoritePrimesView,
         environment: { ($0.fileClient, $0.nthPrime) }
     )
 )
 
-var applicationStore: Store<AppState, AppAction> = Store(initialValue: initialAppState,
-                                                         reducer: with(
-                                                            appReducer,
-                                                            compose(
-                                                                logging,
-                                                                activityFeed
-                                                         )), environment: appEnvironment)
+var applicationStore: Store<AppState, AppAction> =
+    Store(
+        initialValue: initialAppState,
+        reducer: with(
+            appReducer,
+            compose(
+                logging,
+                activityFeed
+        )), environment: appEnvironment
+)
 
 func activityFeed(
     _ reducer: @escaping Reducer<AppState, AppAction, AppEnvironment>
@@ -66,18 +69,20 @@ func activityFeed(
             
         case .counterView(_):
             break
-        case .favoritePrimes(.deleteFavoritePrimes(_)):
+        default:
             break
-        case .favoritePrimes(.saveButtonTapped):
-            break
-        case .favoritePrimes(.loadedFavoritePrimes(_)):
-            break
-        case .favoritePrimes(.loadButtonTapped):
-            break
-        case .favoritePrimes(.nthPrimeButtonTapped):
-            break
-        case .favoritePrimes(.nthPrimeResponse(_)):
-            break
+//        case .favoritePrimes(.deleteFavoritePrimes(_)):
+//            break
+//        case .favoritePrimes(.saveButtonTapped):
+//            break
+//        case .favoritePrimes(.loadedFavoritePrimes(_)):
+//            break
+//        case .favoritePrimes(.loadButtonTapped):
+//            break
+//        case .favoritePrimes(.nthPrimeButtonTapped):
+//            break
+//        case .favoritePrimes(.nthPrimeResponse(_)):
+//            break
         }
         
         return reducer(&state, action, environment)

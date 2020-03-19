@@ -7,10 +7,11 @@
 //
 
 import XCTest
-@testable import RxPrimeTime
 import ComposableArchitecture
 import Counter
 import FavoritePrimes
+import FileClient
+@testable import RxPrimeTime
 
 class RxPrimeTimeTests: XCTestCase {
     
@@ -23,27 +24,32 @@ class RxPrimeTimeTests: XCTestCase {
     }
     
     func testApp() {
-        //        assert(initialValue: CounterViewState(count: 2,
-        //                                              favoritePrimes: [2, 3],
-        //                                              isLoading: false,
-        //                                              alertNthPrime: nil),
-        //               reducer: counterViewReducer,
-        //               environment: { _  in Effect.sync { 3 } },
-        //               steps:
-        //            Step(.send, .counter(.incrTapped)) { $0.count = 3 },
-        //               Step(.send, CounterViewAction.counter(CounterAction.decrTapped), { $0.count = 2 })
-        //        )
-        
-//        let appState = AppState(count: 1,
-//                                favoritePrimes: [2, 3],
-//                                isLoading: false)
+//        let test = FileClient(
+//            load: { _ in Effect<Data?>.sync {
+//                try! JSONEncoder().encode([2, 31])
+//                }
+//        },
+//            save: { _, _ in .fireAndForget {} }
+//        )
 //        
-//        assert(initialValue: appState,
-//               reducer: appReducer,
-//               environment: appEnvironment,
-//               steps: Step(.send, AppAction.counterView(CounterViewAction.counter(CounterAction.incrTapped)), {
-//                appState in appState.isLoading = false
-//               })
+//        let appTestEnvironment = AppEnvironment(
+//            fileClient: test,
+//            nthPrime: { _ in Effect.sync { 3 } }
+//        )
+//
+//        let testInitialAppState = AppState(
+//            count: 0,
+//            favoritePrimes: [],
+//            isLoading: false
+//        )
+        
+//        assert(
+//            initialValue: testInitialAppState,
+//            reducer: appReducer,
+//            environment: appTestEnvironment,
+//            steps: Step(.send, .counterView(.counter(.incrTapped)), { state in
+//                //state.count = 1
+//            })
 //        )
     }
     

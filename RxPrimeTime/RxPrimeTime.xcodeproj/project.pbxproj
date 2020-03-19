@@ -16,7 +16,9 @@
 		B7F974C73B90CC78168DE7F3 /* Pods_FavoritePrimes_FavoritePrimesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D6269044A9EE80C141F3C0 /* Pods_FavoritePrimes_FavoritePrimesTests.framework */; };
 		CF3D3CF2AEA7289A3CC829CA /* Pods_RxPrimeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */; };
 		D56D858A42DB7AC3F6655056 /* Pods_FileClient_FileClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E002FB6D7838BD4D0D65C7 /* Pods_FileClient_FileClientTests.framework */; };
+		F82897052423FCB0004FF77B /* FavoritePrimes+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82897042423FCB0004FF77B /* FavoritePrimes+View.swift */; };
 		F85F0C3924215BDE008A8C3C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85F0C3824215BDE008A8C3C /* CoreFoundation.framework */; };
+		F85F0C3A2423AB0B008A8C3C /* Rx+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1141D23F7DDBB00DA6466 /* Rx+extensions.swift */; };
 		F87E5D8123F7D3EA00FEC92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */; };
 		F87E5D8A23F7D3EC00FEC92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8923F7D3EC00FEC92D /* Assets.xcassets */; };
 		F87E5D8D23F7D3EC00FEC92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87E5D8B23F7D3EC00FEC92D /* LaunchScreen.storyboard */; };
@@ -256,6 +258,7 @@
 		E54E277248996E1068F9A5A8 /* Pods-RxPrimeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxPrimeTimeTests.release.xcconfig"; path = "Target Support Files/Pods-RxPrimeTimeTests/Pods-RxPrimeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6A5FDF5389E773DC2FE2F2A /* Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; path = "Target Support Files/Pods-FavoritePrimes-FavoritePrimesTests/Pods-FavoritePrimes-FavoritePrimesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECE188A0F8A1F705642B5FB8 /* Pods_RxPrimeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxPrimeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82897042423FCB0004FF77B /* FavoritePrimes+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePrimes+View.swift"; sourceTree = "<group>"; };
 		F85F0C3824215BDE008A8C3C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		F87E5D7D23F7D3EA00FEC92D /* RxPrimeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxPrimeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87E5D8023F7D3EA00FEC92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -669,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B1152F23F86D6700DA6466 /* FavoritePrimes.swift */,
+				F82897042423FCB0004FF77B /* FavoritePrimes+View.swift */,
 				F8B1153923F870AB00DA6466 /* Favorite primes */,
 				F8B1151423F86D3500DA6466 /* FavoritePrimes.h */,
 				F8B1151523F86D3500DA6466 /* Info.plist */,
@@ -1653,6 +1657,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B1153623F8704000DA6466 /* FavoritePrimesViewController.swift in Sources */,
+				F85F0C3A2423AB0B008A8C3C /* Rx+extensions.swift in Sources */,
+				F82897052423FCB0004FF77B /* FavoritePrimes+View.swift in Sources */,
 				F8B1153023F86D6700DA6466 /* FavoritePrimes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -50,9 +50,8 @@ class MainViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<FavoritePrimesViewController>(),
                            completion: { vc in
-                            vc.store = applicationStore.view(
-                                value: { $0.favoritePrimes },
-                                action: { .favoritePrimes($0) }
+                            vc.store = applicationStore.view(value: { $0.favoritesView },
+                                                             action: { .favoritePrimesView($0) }
                             )
             })
         }.disposed(by: disposeBag)

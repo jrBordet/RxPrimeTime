@@ -11,13 +11,9 @@ import Foundation
 import Counter
 import FavoritePrimes
 
-enum AppAction {
+public enum AppAction: Equatable {
     case counterView(CounterViewAction)
-    case favoritePrimes(FavoritePrimesAction)
-}
-
-extension AppAction: Equatable {
-    
+    case favoritePrimesView(FavoritePrimesViewAction)
 }
 
 extension AppAction {
@@ -32,14 +28,14 @@ extension AppAction {
         }
     }
     
-    public var favoritePrimes: FavoritePrimesAction? {
+    public var favoritePrimesView: FavoritePrimesViewAction? {
         get {
-            guard case let .favoritePrimes(value) = self else { return nil }
+            guard case let .favoritePrimesView(value) = self else { return nil }
             return value
         }
         set {
-            guard case .favoritePrimes = self, let newValue = newValue else { return }
-            self = .favoritePrimes(newValue)
+            guard case .favoritePrimesView = self, let newValue = newValue else { return }
+            self = .favoritePrimesView(newValue)
         }
     }
 }

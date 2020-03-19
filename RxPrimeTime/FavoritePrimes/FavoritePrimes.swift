@@ -11,7 +11,12 @@ import ComposableArchitecture
 import RxSwift
 import FileClient
 
-public typealias FavoritePrimesState = [Int]
+public typealias FavoritePrimesState = (favorites: [Int], alertNthPrime: NthPrimeAlert?, isLoading: Bool)
+
+public struct NthPrimeAlert: Equatable, Identifiable {
+    let prime: Int
+    public var id: Int { self.prime }
+}
 
 public enum FavoritePrimesAction: Equatable {
     case deleteFavoritePrimes(Int)
@@ -21,7 +26,7 @@ public enum FavoritePrimesAction: Equatable {
     case loadButtonTapped
     case loadedFavoritePrimes([Int])
     
-    case nthPrimeButtonTapped
+    case nthPrimeButtonTapped(Int)
     case nthPrimeResponse(Int?)
 }
 
@@ -37,22 +42,22 @@ public func favoritePrimesReducer(
 ) -> [Effect<FavoritePrimesAction>] {
     switch action {
     case let .deleteFavoritePrimes(index):
-        guard 0...state.count - 1 ~= index else {
+        guard 0...state.favorites.count - 1 ~= index else {
             return []
         }
-        
-        state.remove(at: index)
+
+        state.favorites.remove(at: index)
         return []
     case .saveButtonTapped:
         return [
             environment
                 .fileClient
                 .save("favorite-primes.json", try! JSONEncoder()
-                    .encode(state))
+                    .encode(state.favorites))
                 .map(absurd(_:))
         ]
     case let .loadedFavoritePrimes(favoritePrimes):
-        state = favoritePrimes
+        state.favorites = favoritePrimes
         return []
     case .loadButtonTapped:
         return [
@@ -61,13 +66,17 @@ public func favoritePrimesReducer(
                 .load("favorite-primes.json")
                 .map(loadedFavoritePrimes(data:))
         ]
-    case .nthPrimeButtonTapped:
+    case let .nthPrimeButtonTapped(value):
+        state.isLoading = true
+        
         return [
             environment
-                .nthPrime(state.first!).map(FavoritePrimesAction.nthPrimeResponse)
+                .nthPrime(value)
+                .map(FavoritePrimesAction.nthPrimeResponse)
         ]
     case let .nthPrimeResponse(prime):
-        //state.alertNthPrime = prime.map(PrimeAlert.init(prime:))
+        state.isLoading = false
+        state.alertNthPrime = prime.map(NthPrimeAlert.init(prime:))
         return []
     }
 }

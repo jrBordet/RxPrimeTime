@@ -7,16 +7,18 @@ import FileClient
 
 let favoritePrimesScene = Scene<FavoritePrimesViewController>().render()
 
-let state = [2, 3, 5]
-
 let favoritePrimeEnvironment = FavoritePrimesEnvironment(
-    fileClient: .live,
+    fileClient: .mock,
     nthPrime: { _ in  return Effect.sync { 5 } }
 )
 
 let store = Store(
-    initialValue: [2, 3, 5],
-    reducer: favoritePrimesReducer,
+    initialValue: FavoritePrimesViewState(
+        favoritePrimes: [2, 3, 5, 7],
+        isLoading: false,
+        alertNthPrime: nil
+    ),
+    reducer: favoritePrimesViewReducer,
     environment: favoritePrimeEnvironment
 )
 

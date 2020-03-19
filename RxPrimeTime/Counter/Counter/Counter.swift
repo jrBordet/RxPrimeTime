@@ -14,8 +14,8 @@ import RxSwift
 public typealias CounterState = (count: Int, isLoading: Bool, alertNthPrime: PrimeAlert?)
 
 public struct PrimeAlert: Equatable, Identifiable {
-  let prime: Int
-  public var id: Int { self.prime }
+    let prime: Int
+    public var id: Int { self.prime }
 }
 
 public enum CounterAction: Equatable {

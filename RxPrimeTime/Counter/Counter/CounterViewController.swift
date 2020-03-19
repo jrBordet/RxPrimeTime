@@ -113,10 +113,17 @@ public class CounterViewController: UIViewController {
                         return
                 }
                 
-                let alert = UIAlertController(title: nil, message: "The \(ordinal(count)) prime is \(nthPrime)", preferredStyle: .alert)
+                let alert = UIAlertController(
+                    title: nil,
+                    message: "The \(ordinal(count)) prime is \(nthPrime)",
+                    preferredStyle: .alert
+                )
                 
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                    store.send(.counter(.alertDismissButtonTapped))
+                alert.addAction(UIAlertAction(
+                    title: "Ok",
+                    style: .default,
+                    handler: { _ in
+                        store.send(.counter(.alertDismissButtonTapped))
                 }))
                 
                 self.present(alert, animated: true)

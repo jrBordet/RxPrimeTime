@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import ComposableArchitecture
+import SwiftSpinner
 
 public class FavoritePrimesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
@@ -25,7 +26,7 @@ public class FavoritePrimesViewController: UIViewController {
         }
     }
     
-    public var store: Store<FavoritePrimesState, FavoritePrimesAction>?
+    public var store: Store<FavoritePrimesViewState, FavoritePrimesViewAction>?
     
     private let disposeBag = DisposeBag()
     
@@ -38,14 +39,20 @@ public class FavoritePrimesViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        
+        //        Debug
         //        let favoritePrimeEnvironment = FavoritePrimesEnvironment(
         //            fileClient: .live,
         //            nthPrime: { _ in  return Effect.sync { 5 } }
         //        )
         //
         //        store = Store(
-        //            initialValue: [2, 3, 5],
-        //            reducer: favoritePrimesReducer,
+        //            initialValue: FavoritePrimesViewState(
+        //                favoritePrimes: [2, 3, 5, 7],
+        //                isLoading: false,
+        //                alertNthPrime: nil
+        //            ),
+        //            reducer: favoritePrimesViewReducer,
         //            environment: favoritePrimeEnvironment
         //        )
         
@@ -53,11 +60,19 @@ public class FavoritePrimesViewController: UIViewController {
             return
         }
         
+        store
+            .value
+            .map { $0.isLoading }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
+            .drive(SwiftSpinner.shared.rx_visible)
+            .disposed(by: disposeBag)
+        
         let dataSource =
             store
                 .value
-                .flatMapLatest { favorites -> Observable<[String]> in
-                    .just(favorites.map { "\($0)" })
+                .flatMapLatest { state -> Observable<[String]> in
+                    .just(state.favoritePrimes.map { "\($0)" })
             }.share(replay: 1, scope: .forever)
         
         dataSource
@@ -74,21 +89,39 @@ public class FavoritePrimesViewController: UIViewController {
                     return
                 }
                 
-                store.send(.deleteFavoritePrimes(item))
+                store.send(.favorites(.deleteFavoritePrimes(item)))
         }
         .disposed(by: disposeBag)
         
         tableView
             .rx
             .modelSelected(String?.self)
-            .subscribe(onNext: { [weak self] (model: String?) in
-                guard let self = self else {
+            .subscribe(onNext: { (model: String?) in
+                guard
+                    let smodel = model,
+                    let intModel = Int(smodel) else {
+                        return
+                }
+                
+                store.send(.favorites(.nthPrimeButtonTapped(intModel)))
+            }).disposed(by: disposeBag)
+        
+        store
+            .value
+            .map { $0.alertNthPrime }
+            .debug("[\(self.debugDescription)]", trimOutput: false)
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] (alert: NthPrimeAlert?) in
+                guard
+                    let self = self,
+                    let prime = alert?.prime else {
                     return
                 }
                 
                 let alert = UIAlertController(
                     title: nil,
-                    message: "The  prime is \(model ?? "")",
+                    message: "The  prime is \(prime)",
                     preferredStyle: .alert
                 )
                 
@@ -99,21 +132,24 @@ public class FavoritePrimesViewController: UIViewController {
                         handler: nil)
                 )
                 
-                self.present(alert, animated: true)
+                self.present(
+                    alert,
+                    animated: true
+                )
             }).disposed(by: disposeBag)
         
         loadButton
             .rx
             .tap
             .bind {
-                store.send(.loadButtonTapped)
+                store.send(.favorites(.loadButtonTapped))
         }.disposed(by: disposeBag)
         
         saveButton
             .rx
             .tap
             .bind {
-                store.send(.saveButtonTapped)
+                store.send(.favorites(.saveButtonTapped))
         }.disposed(by: disposeBag)
     }
 }

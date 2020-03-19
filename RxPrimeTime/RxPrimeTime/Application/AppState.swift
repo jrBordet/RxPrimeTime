@@ -11,12 +11,13 @@ import Foundation
 import Counter
 import FavoritePrimes
 
-struct AppState {
+public struct AppState {
     var count: Int
-    var favoritePrimes: FavoritePrimesState
+    var favoritePrimes: [Int]
     var isLoading: Bool
     var activityFeed: [Activity] = []
     var alertNthPrime: PrimeAlert? = nil
+    var favoritesAlertNthPrime: NthPrimeAlert? = nil
     
     struct Activity: CustomDebugStringConvertible {
         var debugDescription: String {
@@ -39,9 +40,8 @@ struct AppState {
 }
 
 extension AppState: Equatable {
-    static func == (lhs: AppState, rhs: AppState) -> Bool {
-        lhs.count == rhs.count
-            && lhs.isLoading == rhs.isLoading
+    public static func == (lhs: AppState, rhs: AppState) -> Bool {
+        lhs.count == rhs.count && lhs.isLoading == rhs.isLoading
     }
 }
 
@@ -60,6 +60,22 @@ extension AppState {
             self.favoritePrimes = newValue.favoritePrimes
             self.isLoading = newValue.isLoading
             self.alertNthPrime = newValue.alertNthPrime
+        }
+    }
+    
+    var favoritesView: FavoritePrimesViewState {
+        get {
+            FavoritePrimesViewState(
+                favoritePrimes: self.favoritePrimes,
+                isLoading: self.isLoading,
+                alertNthPrime: self.favoritesAlertNthPrime
+            )
+        }
+        
+        set {
+            self.favoritePrimes = newValue.favoritePrimes
+            self.isLoading = newValue.isLoading
+            self.favoritesAlertNthPrime = newValue.alertNthPrime
         }
     }
 }
