@@ -51,7 +51,8 @@ var applicationStore: Store<AppState, AppAction> =
             compose(
                 logging,
                 activityFeed
-        )), environment: appEnvironment
+        )),
+        environment: appEnvironment
 )
 
 func activityFeed(
