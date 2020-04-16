@@ -609,9 +609,9 @@
 		F8B1141623F7DD1600DA6466 /* PrimeModal */ = {
 			isa = PBXGroup;
 			children = (
+				F8B1141723F7DD2200DA6466 /* PrimeModal.swift */,
 				F8B1141923F7DD6600DA6466 /* PrimeModalViewController.swift */,
 				F8B1141B23F7DD9000DA6466 /* PrimeModalViewController.xib */,
-				F8B1141723F7DD2200DA6466 /* PrimeModal.swift */,
 			);
 			path = PrimeModal;
 			sourceTree = "<group>";

@@ -32,29 +32,36 @@ class MainViewController: UIViewController {
                 return
             }
             
-            navigationLink(from: self,
-                           destination: Scene<CounterViewController>(),
-                           completion: { vc in
-                            vc.store = applicationStore.view(
-                                value: { $0.counterView },
-                                action: { .counterView($0) }
-                            )
+            navigationLink(
+                from: self,
+                destination: Scene<CounterViewController>(),
+                completion: { vc in
+                    vc.store = applicationStore
+                        .view(
+                            value: { $0.counterView },
+                            action: { .counterView($0) }
+                    )
             })
-        }.disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
         
         favoritesPrimesTap.rx.tap.bind { [weak self] in
             guard let self = self else {
                 return
             }
             
-            navigationLink(from: self,
-                           destination: Scene<FavoritePrimesViewController>(),
-                           completion: { vc in
-                            vc.store = applicationStore.view(value: { $0.favoritesView },
-                                                             action: { .favoritePrimesView($0) }
-                            )
+            navigationLink(
+                from: self,
+                destination: Scene<FavoritePrimesViewController>(),
+                completion: { vc in
+                    vc.store = applicationStore
+                        .view(
+                            value: { $0.favoritesView },
+                            action: { .favoritePrimesView($0) }
+                    )
             })
-        }.disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
         
         applicationStore
             .value

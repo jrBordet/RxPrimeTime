@@ -1,6 +1,6 @@
 //
 //  Logging+.swift
-//  MangaedenNetworking
+//  Networking
 //
 //  Created by Jean Raphael Bordet on 28/11/2019.
 //  Copyright © 2019 Bordet. All rights reserved.

@@ -41,7 +41,7 @@ extension FileClient {
             }
     },
         save: { fileName, data in
-            return .fireAndForget {
+            .fireAndForget {
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                 let documentsUrl = URL(fileURLWithPath: documentsPath)
                 let favoritePrimesUrl = documentsUrl.appendingPathComponent(fileName)

@@ -48,7 +48,7 @@ class FavoritePrimesTests: XCTestCase {
     }
     
     func testLoadButtonTapped() {
-        let state: FavoritePrimesViewState = FavoritePrimesViewState()
+        let state = FavoritePrimesViewState()
 
         let test = FileClient(
             load: { _ in Effect<Data?>.sync {

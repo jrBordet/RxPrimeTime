@@ -83,10 +83,14 @@ public class CounterViewController: UIViewController {
                 return
             }
             
-            navigationLink(from: self,
-                           destination: Scene<PrimeModalViewController>(),
-                           completion: { vc in
-                            vc.store = store.view(value: { ($0.count, $0.favoritePrimes) }, action: { .primeModal($0) })
+            navigationLink(
+                from: self,
+                destination: Scene<PrimeModalViewController>(),
+                completion: { vc in
+                    vc.store = store.view(
+                        value: { ($0.count, $0.favoritePrimes) },
+                        action: { .primeModal($0) }
+                    )
             }, isModal: true)
             
         }.disposed(by: disposeBag)
