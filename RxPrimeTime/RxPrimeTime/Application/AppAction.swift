@@ -12,7 +12,7 @@ import Counter
 import FavoritePrimes
 
 enum AppAction {
-    case counterView(CounterViewAction)
+    case counterView(CounterFetureAction)
     case favoritePrimes(FavoritePrimesAction)
 }
 
@@ -21,7 +21,7 @@ extension AppAction: Equatable {
 }
 
 extension AppAction {
-    public var counterView: CounterViewAction? {
+    public var counterView: CounterFetureAction? {
         get {
             guard case let .counterView(value) = self else { return nil }
             return value

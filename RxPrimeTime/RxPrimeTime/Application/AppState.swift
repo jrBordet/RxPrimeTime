@@ -46,9 +46,9 @@ extension AppState: Equatable {
 }
 
 extension AppState {
-    var counterView: CounterViewState {
+    var counterView: CounterFeatureState {
         get {
-            CounterViewState(
+            CounterFeatureState(
                 count: self.count,
                 favoritePrimes: self.favoritePrimes,
                 isLoading: self.isLoading,

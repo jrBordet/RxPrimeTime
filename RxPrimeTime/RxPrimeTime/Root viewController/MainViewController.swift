@@ -35,10 +35,13 @@ class MainViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<CounterViewController>(),
                            completion: { vc in
-                            vc.store = applicationStore.view(
+                            vc.store = applicationStore.scope(
                                 value: { $0.counterView },
                                 action: { .counterView($0) }
                             )
+                                                        
+                            vc.viewStore = vc.store?.scope(value: CounterViewController.State.init(counterFeatureState:), action: { $0 }).view
+                            
             })
         }.disposed(by: disposeBag)
         
@@ -50,10 +53,12 @@ class MainViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<FavoritePrimesViewController>(),
                            completion: { vc in
-                            vc.store = applicationStore.view(
+                            vc.store = applicationStore.scope(
                                 value: { $0.favoritePrimes },
                                 action: { .favoritePrimes($0) }
                             )
+                            
+                            vc.viewStore = vc.store?.scope(value: { $0 }, action: { $0 }).view
             })
         }.disposed(by: disposeBag)
         

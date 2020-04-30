@@ -26,6 +26,7 @@ public class FavoritePrimesViewController: UIViewController {
        }
     
     public var store: Store<FavoritePrimesState, FavoritePrimesAction>?
+    public var viewStore: ViewStore<FavoritePrimesState>?
     
     private let disposeBag = DisposeBag()
     
@@ -36,12 +37,14 @@ public class FavoritePrimesViewController: UIViewController {
         
         //store = Store(initialValue: [2, 3, 5], reducer: favoritePrimesReducer(state:action:))
         
-        guard let store = store else {
+        guard
+            let store = store,
+            let viewStore = viewStore else {
             return
         }
         
         let dataSource =
-            store
+            viewStore
                 .value
                 .flatMapLatest { favorites -> Observable<[String]> in
                     .just(favorites.map { "\($0)" })

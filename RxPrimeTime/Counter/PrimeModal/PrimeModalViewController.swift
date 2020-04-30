@@ -11,7 +11,19 @@ import RxSwift
 import RxCocoa
 import ComposableArchitecture
 
+extension PrimeModalViewController.State {
+  init(primeModalState state: PrimeModalState) {
+    self.count = state.count
+    self.isFavorite = state.favoritePrimes.contains(state.count)
+  }
+}
+
 public class PrimeModalViewController: UIViewController {
+    struct State: Equatable {
+      let count: Int
+      let isFavorite: Bool
+    }
+    
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var actionsContainer: UIStackView!
     @IBOutlet var removeFavoriteButton: UIButton!
@@ -19,6 +31,7 @@ public class PrimeModalViewController: UIViewController {
     @IBOutlet var dismissButton: UIButton!
     
     public var store: Store<PrimeModalState, PrimeModalAction>?
+    var viewStore: ViewStore<State>?
     
     private let disposeBag = DisposeBag()
     
@@ -43,29 +56,28 @@ public class PrimeModalViewController: UIViewController {
             dismissButton.isHidden = false
         }
         
-        guard let store = self.store else {
+        guard
+            let store = self.store,
+            let viewStore = self.viewStore else {
             return
         }
         
-        //self.store = Store<PrimeModalState, PrimeModalAction>.init(initialValue: (count: 2, favoritePrimes: [5,7]), reducer: primeModalReducer(state:action:))
-        
-        store
+        viewStore
             .value
             .map { isPrime($0.count) ? "\($0.count) is prime 🎉" : "\($0.count) is not prime 😅" }
             .bind(to: countLabel.rx.text)
             .disposed(by: disposeBag)
         
-        store
+        viewStore
             .value
             .map { isPrime($0.count) }
             .bind(to: actionsContainer.rx.isVisible)
             .disposed(by: disposeBag)
                 
-        let isFavorite =
-            store
-                .value
-                .map { $0.favoritePrimes.contains($0.count) }
-                .share(replay: 1, scope: .forever)
+        let isFavorite = viewStore
+            .value
+            .map { $0.isFavorite }
+            .share(replay: 1, scope: .forever)
             
         isFavorite
             .bind(to: addFavoriteButton.rx.isHidden)

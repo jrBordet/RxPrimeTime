@@ -13,9 +13,24 @@ import RxCocoa
 public typealias Effect<A> = Observable<A>
 
 /**
- public typealias Reducer<Value, Action, Environment> = (inout Value, Action, Environment) -> [Effect<Action>]
+    We should think of this as a store that is fine-tuned for working directly with views.
+    Where stores hold all of the messy business logic of our application,
+    and thus may contain a lot more information than our view cares about, the ViewStore will hold only the domain that this view cares about.
+    It doesn’t even need to hold the domain of its children views if it doesn’t need that information.
  */
-// public typealias Reducer<Value, Action> = (inout Value, Action) -> [Effect<Action>]
+
+
+public final class ViewStore<Value> {
+    //@Published public fileprivate(set) var value: Value
+    public private(set) var value: BehaviorRelay<Value>
+    //fileprivate var cancellable: Disposable
+    private let disposeBag = DisposeBag()
+    
+    public init(initialValue value: Value) {
+        //self.value = value
+        self.value = BehaviorRelay<Value>(value: value)
+    }
+}
 
 public typealias Reducer<Value, Action, Environment> = (inout Value, Action, Environment) -> [Effect<Action>]
 
@@ -33,8 +48,6 @@ public final class Store<Value, Action> {
         reducer: @escaping Reducer<Value, Action, Environment>,
         environment: Environment
     ) {
-        //self.reducer = reducer
-        
         self.reducer = { value, action, environment in
           reducer(&value, action, environment as! Environment)
         }
@@ -57,7 +70,7 @@ public final class Store<Value, Action> {
         }
     }
     
-    public func view<LocalValue, LocalAction>(
+    public func scope<LocalValue, LocalAction>(
         value toLocalValue: @escaping (Value) -> LocalValue,
         action toGlobalAction: @escaping (LocalAction) -> Action
     ) -> Store<LocalValue, LocalAction> {
@@ -74,6 +87,19 @@ public final class Store<Value, Action> {
         }).disposed(by: localStore.disposeBag)
         
         return localStore
+    }
+}
+
+public extension Store where Value: Equatable {
+    var view: ViewStore<Value> {
+        let viewStore = ViewStore(initialValue: self.value.value)
+
+        self.value
+            .distinctUntilChanged()
+            .bind(to: viewStore.value)
+            .disposed(by: disposeBag)
+
+        return viewStore
     }
 }
 

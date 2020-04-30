@@ -13,14 +13,37 @@ import ComposableArchitecture
 import SwiftSpinner
 import SceneBuilder
 
+public extension CounterViewController.State {
+  init(counterFeatureState: CounterFeatureState) {
+    self.alertNthPrime = counterFeatureState.alertNthPrime
+    self.count = counterFeatureState.count
+    self.isLoading = counterFeatureState.isLoading
+//    self.isNthPrimeButtonDisabled = true//counterFeatureState.isNthPrimeRequestInFlight
+//    self.isPrimeModalShown = true//counterFeatureState.isPrimeModalShown
+//    self.isIncrementButtonDisabled = true//counterFeatureState.isNthPrimeRequestInFlight
+//    self.isDecrementButtonDisabled = true//counterFeatureState.isNthPrimeRequestInFlight
+  }
+}
+
 public class CounterViewController: UIViewController {
+    public struct State: Equatable {
+      let alertNthPrime: PrimeAlert?
+      let count: Int
+      let isLoading: Bool
+//      let isNthPrimeButtonDisabled: Bool
+//      let isPrimeModalShown: Bool
+//      let isIncrementButtonDisabled: Bool
+//      let isDecrementButtonDisabled: Bool
+    }
+    
     @IBOutlet var decrButton: UIButton!
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var incrButton: UIButton!
     @IBOutlet var isPrimeModalShown: UIButton!
     @IBOutlet var isNthPrimeButton: UIButton!
     
-    public var store: Store<CounterViewState, CounterViewAction>?
+    public var store: Store<CounterFeatureState, CounterFetureAction>?
+    public var viewStore: ViewStore<State>?
     
     private let disposeBag = DisposeBag()
     
@@ -39,30 +62,31 @@ public class CounterViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let store = self.store else {
+        guard
+            let store = self.store,
+            let viewStore = self.viewStore else {
             return
         }
         
 //        Store<CounterViewState, CounterViewAction>.init(initialValue: CounterViewState(count: 0, favoritePrimes: [], isLoading: false, alertNthPrime: nibName), reducer: counterViewReducer)
         
-        store
+        viewStore
             .value
             .debug("[\(self.debugDescription)]", trimOutput: false)
             .map { $0.isLoading }
-            //.debug("[\(self.debugDescription)]", trimOutput: false)
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(SwiftSpinner.shared.rx_visible)
             .disposed(by: disposeBag)
         
-        store
+        viewStore
             .value
             .map { $0.isLoading == false}
             .asDriver(onErrorJustReturn: false)
             .drive(isNthPrimeButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        store
+        viewStore
             .value
             .map { String($0.count) }
             .bind(to: countLabel.rx.text)
@@ -80,12 +104,14 @@ public class CounterViewController: UIViewController {
             navigationLink(from: self,
                            destination: Scene<PrimeModalViewController>(),
                            completion: { vc in
-                            vc.store = store.view(value: { ($0.count, $0.favoritePrimes) }, action: { .primeModal($0) })
+                            vc.store = store.scope(value: { ($0.count, $0.favoritePrimes) }, action: { .primeModal($0) })
+                            
+                            vc.viewStore = vc.store?.scope(value: PrimeModalViewController.State.init(primeModalState:), action: { $0 }).view
             }, isModal: true)
             
         }.disposed(by: disposeBag)
         
-        store
+        viewStore
             .value
             .map { "What is the \(String($0.count))rd prime?" }
             .bind(to: isNthPrimeButton.rx.title())
@@ -95,7 +121,7 @@ public class CounterViewController: UIViewController {
             store.send(.counter(.nthPrimeButtonTapped))
         }.disposed(by: disposeBag)
         
-        store
+        viewStore
             .value
             .map { (count: $0.count, prime: $0.alertNthPrime?.prime) }
             .distinctUntilChanged { $0.prime == nil && $1.prime == nil }
