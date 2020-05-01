@@ -11,17 +11,17 @@ import ComposableArchitecture
 
 import FileClient
 
-public let counterViewReducer: Reducer<CounterFeatureState, CounterFetureAction, CounterEnvironment> = combine(
+public let counterViewReducer: Reducer<CounterFeatureState, CounterFeatureAction, CounterEnvironment> = combine(
     pullback(
         counterReducer,
         value: \CounterFeatureState.counter,
-        action: \CounterFetureAction.counter,
+        action: \CounterFeatureAction.counter,
         environment: { $0 }
     ),
     pullback(
         primeModalReducer,
         value: \CounterFeatureState.primeModal,
-        action: \CounterFetureAction.primeModal,
+        action: \CounterFeatureAction.primeModal,
         environment: { _ in () }
     )
 )
@@ -59,7 +59,7 @@ public struct CounterFeatureState: Equatable {
     }
 }
 
-public enum CounterFetureAction: Equatable {
+public enum CounterFeatureAction: Equatable {
   case counter(CounterAction)
   case primeModal(PrimeModalAction)
 

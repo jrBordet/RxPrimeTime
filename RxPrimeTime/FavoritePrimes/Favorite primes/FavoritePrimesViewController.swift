@@ -26,7 +26,7 @@ public class FavoritePrimesViewController: UIViewController {
        }
     
     public var store: Store<FavoritePrimesState, FavoritePrimesAction>?
-    public var viewStore: ViewStore<FavoritePrimesState>?
+    public var viewStore: ViewStore<FavoritePrimesState, FavoritePrimesAction>?
     
     private let disposeBag = DisposeBag()
     
@@ -64,7 +64,7 @@ public class FavoritePrimesViewController: UIViewController {
                     return
                 }
                 
-                store.send(.deleteFavoritePrimes(item))
+                viewStore.send(.deleteFavoritePrimes(item))
         }
         .disposed(by: disposeBag)
         
@@ -72,14 +72,14 @@ public class FavoritePrimesViewController: UIViewController {
             .rx
             .tap
             .bind {
-                store.send(.loadButtonTapped)
+                viewStore.send(.loadButtonTapped)
         }.disposed(by: disposeBag)
         
         saveButton
             .rx
             .tap
             .bind {
-                store.send(.saveButtonTapped)
+                viewStore.send(.saveButtonTapped)
         }.disposed(by: disposeBag)
     }
 }

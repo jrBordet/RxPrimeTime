@@ -21,7 +21,8 @@ public struct PrimeAlert: Equatable, Identifiable {
 public enum CounterAction: Equatable {
     case decrTapped
     case incrTapped
-    case nthPrimeButtonTapped
+    //  case nthPrimeButtonTapped
+    case requestNthPrime
     case nthPrimeResponse(Int?)
     case alertDismissButtonTapped
 }
@@ -38,7 +39,7 @@ public func counterReducer(
     case .incrTapped:
         state.count += 1
         return []
-    case .nthPrimeButtonTapped:
+    case .requestNthPrime:
         state.isLoading = true
 
         return [

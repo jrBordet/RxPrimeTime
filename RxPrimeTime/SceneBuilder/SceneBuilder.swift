@@ -22,6 +22,18 @@ public struct Scene<A: UIViewController> {
         
         return vc
     }
+    
+    public func nib() -> String {
+        guard let nib = (String(describing: type(of: self)) as NSString).components(separatedBy: ".").first else {
+            fatalError()
+        }
+        
+        return String(nib.replacingOccurrences(of: "Scene<", with: "").dropLast())
+    }
+    
+    public func bundle() -> Bundle {
+        return Bundle(for: A.self)
+    }
 }
 
 public func navigationLink<A: UIViewController>(from vc: UIViewController, destination: Scene<A>, completion: (A) -> Void, isModal: Bool =  false) -> Void {

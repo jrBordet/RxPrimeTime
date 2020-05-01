@@ -25,6 +25,43 @@ public extension CounterViewController.State {
   }
 }
 
+public extension CounterFeatureAction {
+    init(action: CounterViewController.Action) {
+        switch action {
+        case .decrTapped:
+            self = .counter(CounterAction.decrTapped)
+        case .incrTapped:
+            self = .counter(CounterAction.incrTapped)
+        case .nthPrimeButtonTapped:
+            self = .counter(CounterAction.requestNthPrime)
+        case .alertDismissButtonTapped:
+            self = .counter(CounterAction.alertDismissButtonTapped)
+        case .isPrimeButtonTapped:
+            // TODO: - check this
+            self = .counter(CounterAction.alertDismissButtonTapped)
+        case .doubleTap:
+             // TODO: - check this
+            self = .counter(CounterAction.alertDismissButtonTapped)
+        }
+//        switch action {
+//        case .decrTapped:
+//            self = .counter(.decrTapped)
+//        case .incrTapped:
+//            self = .counter(.incrTapped)
+//        case .nthPrimeButtonTapped:
+//            self = .counter(.requestNthPrime)
+//        case .alertDismissButtonTapped:
+//            self = .counter(.alertDismissButtonTapped)
+//        case .isPrimeButtonTapped:
+//            self = .counter(.isPrimeButtonTapped)
+//        case .primeModalDismissed:
+//            self = .counter(.primeModalDismissed)
+//        case .doubleTap:
+//            self = .counter(.requestNthPrime)
+//        }
+    }
+}
+
 public class CounterViewController: UIViewController {
     public struct State: Equatable {
       let alertNthPrime: PrimeAlert?
@@ -36,14 +73,24 @@ public class CounterViewController: UIViewController {
 //      let isDecrementButtonDisabled: Bool
     }
     
+    public enum Action {
+      case decrTapped
+      case incrTapped
+      case nthPrimeButtonTapped
+      case alertDismissButtonTapped
+      case isPrimeButtonTapped
+//      case primeModalDismissed
+      case doubleTap
+    }
+    
     @IBOutlet var decrButton: UIButton!
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var incrButton: UIButton!
     @IBOutlet var isPrimeModalShown: UIButton!
     @IBOutlet var isNthPrimeButton: UIButton!
     
-    public var store: Store<CounterFeatureState, CounterFetureAction>?
-    public var viewStore: ViewStore<State>?
+    public var store: Store<CounterFeatureState, CounterFeatureAction>?
+    public var viewStore: ViewStore<State, Action>?
     
     private let disposeBag = DisposeBag()
     
@@ -93,22 +140,21 @@ public class CounterViewController: UIViewController {
             .disposed(by: disposeBag)
         
         decrButton.rx.tap.bind {
-            store.send(.counter(.decrTapped))
+            viewStore.send(CounterViewController.Action.decrTapped)
         }.disposed(by: disposeBag)
         
         incrButton.rx.tap.bind {
-            store.send(.counter(.incrTapped))
+            viewStore.send(CounterViewController.Action.incrTapped)
         }.disposed(by: disposeBag)
         
-        isPrimeModalShown.rx.tap.bind {
-            navigationLink(from: self,
-                           destination: Scene<PrimeModalViewController>(),
-                           completion: { vc in
-                            vc.store = store.scope(value: { ($0.count, $0.favoritePrimes) }, action: { .primeModal($0) })
-                            
-                            vc.viewStore = vc.store?.scope(value: PrimeModalViewController.State.init(primeModalState:), action: { $0 }).view
-            }, isModal: true)
+        isPrimeModalShown.rx.tap.bind { [weak self] in
+            let vc = PrimeModalViewController(
+                store: store.scope(
+                    value: { ($0.count, $0.favoritePrimes) },
+                    action: { .primeModal($0) }
+            ))
             
+            self?.present(vc, animated: true, completion: nil)
         }.disposed(by: disposeBag)
         
         viewStore
@@ -118,7 +164,8 @@ public class CounterViewController: UIViewController {
             .disposed(by: disposeBag)
         
         isNthPrimeButton.rx.tap.bind {
-            store.send(.counter(.nthPrimeButtonTapped))
+            viewStore.send(.nthPrimeButtonTapped)
+            //store.send(.counter(.nthPrimeButtonTapped))
         }.disposed(by: disposeBag)
         
         viewStore
@@ -136,7 +183,8 @@ public class CounterViewController: UIViewController {
                 let alert = UIAlertController(title: nil, message: "The \(ordinal(count)) prime is \(nthPrime)", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                    store.send(.counter(.alertDismissButtonTapped))
+                    viewStore.send(CounterViewController.Action.alertDismissButtonTapped)
+                   // viewStore.send(.counter(.alertDismissButtonTapped))
                 }))
                 
                 self.present(alert, animated: true)

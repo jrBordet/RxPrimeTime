@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import ComposableArchitecture
+import SceneBuilder
 
 extension PrimeModalViewController.State {
   init(primeModalState state: PrimeModalState) {
@@ -31,9 +32,23 @@ public class PrimeModalViewController: UIViewController {
     @IBOutlet var dismissButton: UIButton!
     
     public var store: Store<PrimeModalState, PrimeModalAction>?
-    var viewStore: ViewStore<State>?
+    var viewStore: ViewStore<State, PrimeModalAction>?
     
     private let disposeBag = DisposeBag()
+    
+    public convenience init(store: Store<PrimeModalState, PrimeModalAction>) {
+        guard let nib = (String(describing: type(of: self)) as NSString).components(separatedBy: ".").first else {
+            fatalError()
+        }
+        
+        self.init(nibName: nib, bundle: Bundle(for: PrimeModalViewController.self))
+        
+        self.store = store
+        
+        self.viewStore = store.scope(
+            value: PrimeModalViewController.State.init(primeModalState:), action: { $0 }
+        ).view
+    }
     
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -86,13 +101,13 @@ public class PrimeModalViewController: UIViewController {
         isFavorite
             .bind(to: removeFavoriteButton.rx.isVisible)
             .disposed(by: disposeBag)
-        
+                
         addFavoriteButton.rx
-            .tap.bind { store.send(.saveFavoritePrimeTapped) }
+            .tap.bind { viewStore.send(PrimeModalAction.saveFavoritePrimeTapped) }
             .disposed(by: disposeBag)
         
         removeFavoriteButton.rx
-            .tap.bind { store.send(.removeFavoritePrimeTapped) }
+            .tap.bind { viewStore.send(.removeFavoritePrimeTapped) }
             .disposed(by: disposeBag)
         
         dismissButton.rx.tap.bind { [weak self] in

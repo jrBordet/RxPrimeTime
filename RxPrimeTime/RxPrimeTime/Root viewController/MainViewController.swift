@@ -39,8 +39,11 @@ class MainViewController: UIViewController {
                                 value: { $0.counterView },
                                 action: { .counterView($0) }
                             )
-                                                        
-                            vc.viewStore = vc.store?.scope(value: CounterViewController.State.init(counterFeatureState:), action: { $0 }).view
+                            
+                            vc.viewStore = vc.store?.scope(
+                                value: CounterViewController.State.init(counterFeatureState:),
+                                action: CounterFeatureAction.init
+                            ).view
                             
             })
         }.disposed(by: disposeBag)

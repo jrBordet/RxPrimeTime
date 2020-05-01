@@ -20,17 +20,23 @@ public typealias Effect<A> = Observable<A>
  */
 
 
-public final class ViewStore<Value> {
-    //@Published public fileprivate(set) var value: Value
+public final class ViewStore<Value, Action> {
     public private(set) var value: BehaviorRelay<Value>
-    //fileprivate var cancellable: Disposable
+    public let send: (Action) -> Void
+    
     private let disposeBag = DisposeBag()
     
-    public init(initialValue value: Value) {
-        //self.value = value
+    public init(
+        initialValue value: Value,
+        send: @escaping (Action) -> Void
+    ) {
         self.value = BehaviorRelay<Value>(value: value)
+        self.send = send
     }
 }
+
+/// It can mutate app state (which is captured by the Value generic) given an Action (typically a user action, like a button tap)
+/// It’s also handed this Environment type, which holds all of our feature’s dependencies, like API clients, file clients, and anything else that needs to reach into the messy, outside world. And this environment is important, because we must return an array of effects that will be run after our business logic has executed. This is what allows us to interact with the outside world, and feed information from the outside world back into our application.
 
 public typealias Reducer<Value, Action, Environment> = (inout Value, Action, Environment) -> [Effect<Action>]
 
@@ -57,7 +63,7 @@ public final class Store<Value, Action> {
         self.environment = environment
     }
     
-    public func send(_ action: Action) {
+    private func send(_ action: Action) {
         var valueCopy = self.value.value
         let effects = self.reducer(&valueCopy, action, self.environment)
         
@@ -91,8 +97,11 @@ public final class Store<Value, Action> {
 }
 
 public extension Store where Value: Equatable {
-    var view: ViewStore<Value> {
-        let viewStore = ViewStore(initialValue: self.value.value)
+    var view: ViewStore<Value, Action> {
+        let viewStore = ViewStore(
+            initialValue: self.value.value,
+            send: self.send
+        )
 
         self.value
             .distinctUntilChanged()
